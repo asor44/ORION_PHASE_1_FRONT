@@ -1,0 +1,66 @@
+html {
+  background-color: #f2f2f2;
+  font-family: Arial, sans-serif;
+
+}
+
+nav {
+  width: 100%;
+
+}
+
+.header_ul {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.header_li {
+  text-align: center;
+  margin: 0 10px;
+}
+
+.asor44 {
+  text-align: center;
+  display: flex;
+  margin-left: 30%;
+  margin-right: 30%;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  font-size: 700%;
+}
+
+.drapeau_francais_blanc {
+  background: #FFFFFF;
+  width: 100%;
+}
+
+.drapeau_francais_rouge {
+  background: #EF4135;
+  width: 100%;
+}
+
+.drapeau_francais_rouge_gradient {
+  background: linear-gradient(to right, #FFFFFF, #EF4135);
+  width: 50%;
+}
+
+.drapeau_francais_bleu_gradient {
+  background: linear-gradient(to right, #0055A4, #FFFFFF);
+  width: 50%;
+}
+
+.drapeau_francais_bleu {
+  background: #0055A4;
+  width: 100%;
+}
+
+.drapeau_haut {
+  display: flex;
+  height: 10px;
+}
+
+.drapeau_bas {
+  display: flex;
+  height: 3px;
+}
