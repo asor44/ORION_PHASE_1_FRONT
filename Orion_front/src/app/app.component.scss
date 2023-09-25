@@ -44,6 +44,8 @@ header {
   }
 }
 
+
+
 .card {
   background: white;
   text-decoration: none;
@@ -108,16 +110,15 @@ header {
     }
   }
 
-  width: 80%;
-  /* haut | droit | bas | gauche */
-  margin: 2% 10% 2% 10%;
+
 }
 
 .partner{
   text-align: center;
   margin-top: 4%;
-  //border: 1px solid;
-  //background-color: #2fa3ff;
+  margin-bottom: 2%;
+  font-weight: bold;
+  font-size: 150%;
 }
 hr{
   margin-bottom: 2%;
