@@ -1,13 +1,15 @@
 @media screen and (min-width: 768px) {
 
   html {
-    background-color: #f2f2f2;
+    background-color: white;
     font-family: Arial, sans-serif;
 
   }
 
   nav {
-    width: 100%;
+    width: 95%;
+    margin-left: 2.5%;
+
 
   }
 
@@ -24,34 +26,36 @@
   .header_pc {
     display: flex;
   }
-  
+
   .div_header_logo {
     display: flex;
     flex-direction: row;
     width: 100%;
-    display: flex;
+
   }
 
   .asor44 {
+    margin-top: 1%;
     display: flex;
     text-align: center;
-    margin-left: 30%;
-    margin-right: 30%;
-    margin-bottom: 0px;
-    margin-top: 0px;
-    font-size: 400%;
+    margin-left: 42%;
+    font-size: 3rem;
   }
 
   .logo_asor {
     display: flex;
     width: 85px;
     height: 70px;
+    /* haut | droit | bas | gauche */
+    margin: 1% 1% 0 0;
   }
 
   .logo_connection {
     display: flex;
     width: 85px;
     height: 70px;
+    padding-right: 20%;
+    padding-top: 15%;
   }
 
   .drapeau_francais_blanc {
@@ -210,6 +214,7 @@
 
   .info_login {
     font-size: 100%;
+    margin-left: 3%;
   }
 
 }
