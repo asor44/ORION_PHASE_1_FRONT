@@ -3,11 +3,13 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './asor44/header/header.component';
+import { FooterViewComponent } from './asor44/footer/footer-view/footer-view.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent
+    HeaderComponent,
+    FooterViewComponent
   ],
   imports: [
     BrowserModule
