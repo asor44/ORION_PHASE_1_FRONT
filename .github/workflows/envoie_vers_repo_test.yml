@@ -1,0 +1,22 @@
+name: Push Files
+
+on: [push]
+
+jobs:
+  copy-file:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Pushes multiple files
+      uses: shirebio/action-copy-files-to-another-repo@0.0.1
+      env:
+        API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+      with:
+        glob: 'my_files/*.yaml'
+        destination_repo: 'asor44/ORION_PHASE_1_FRONT'
+        destination_folder: 'FRONT'
+        user_email: 'kevin.andrey@asor44.fr'
+        user_name: 'BENDER'
+        commit_msg: '[GHA] Update the test files.'
