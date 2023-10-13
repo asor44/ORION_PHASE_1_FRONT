@@ -55,4 +55,4 @@ jobs:
           app-name: 'asor'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_C3F2112F7F254D88B5976DFD879BF3D5 }}
-          package: ./Orion_front
+          package: ${{ github.workspace }}/Orion_front
