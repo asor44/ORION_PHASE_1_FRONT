@@ -54,5 +54,5 @@ jobs:
         with:
           app-name: 'asor'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_C3F2112F7F254D88B5976DFD879BF3D5 }}
-          package: ${{ github.workspace }}/Orion_front
+          package: ${{ github.workspace }}
 
