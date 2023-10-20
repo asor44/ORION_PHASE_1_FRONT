@@ -3,7 +3,7 @@ name: Build and deploy Node.js app to Azure Web App - asor
 on:
   push:
     branches:
-      - PROD
+      - DEV
   workflow_dispatch:
 
 jobs:
@@ -54,5 +54,6 @@ jobs:
         with:
           app-name: 'asor'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_C3F2112F7F254D88B5976DFD879BF3D5 }}
-          package: ${{ github.workspace }}
-
+          package: ${{ github.workspace }}/Orion_front
+          
+      - name : PublishBuildArtifacts@1
