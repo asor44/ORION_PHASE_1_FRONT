@@ -27,11 +27,17 @@ jobs:
         run: npm run build --if-present
         working-directory: Orion_front   # Assurez-vous que le chemin est correct
 
+      - name: Create artifact directory
+        run: mkdir -p artifact-directory
+
+      - name: Copy files to artifact directory
+        run: cp -r Orion_front/dist/* artifact-directory
+
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
         with:
           name: node-app
-          path: Orion_front/dist/orion-front   # Assurez-vous que le chemin est correct
+          path: artifact-directory   # Utilisez le répertoire temporaire créé
 
   deploy:
     runs-on: ubuntu-latest
@@ -50,8 +56,8 @@ jobs:
         with:
           app-name: 'asor'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_C3F2112F7F254D88B5976DFD879BF3D5 }}
-          package: ${{ github.workspace }}/Orion_front/dist/orion-front   # Assurez-vous que le chemin est correct
-          
+          package: ${{ github.workspace }}/artifact-directory   # Utilisez le répertoire temporaire
+
       - name: Publish Artifacts
         uses: actions/upload-artifact@v2
         with:
