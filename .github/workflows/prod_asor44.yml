@@ -1,12 +1,9 @@
-# Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
-# More GitHub Actions for Azure: https://github.com/Azure/actions
-
-name: Build and deploy Node.js app to Azure Web App - asor44
+name: Build and deploy Node.js app to Azure Web App - asor
 
 on:
   push:
     branches:
-      - PROD
+      - DEV
   workflow_dispatch:
 
 jobs:
@@ -24,54 +21,39 @@ jobs:
 
       - name: Install dependencies
         run: npm install
-        working-directory: ./Orion_front
+        working-directory: Orion front   # Assurez-vous que le chemin est correct
 
       - name: Build app
         run: npm run build --if-present
-        working-directory: Orion_front
-
-      - name: npm install, build, and test
-        run: |
-          npm install
-          npm run build --if-present
-          npm run test --if-present
-
-      - name: Zip artifact for deployment
-        run: zip release.zip ./* -r
+        working-directory: Orion front   # Assurez-vous que le chemin est correct
 
       - name: Upload artifact for deployment job
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v2
         with:
           name: node-app
-          path: release.zip
+          path: Orion front/dist/orion-front   # Assurez-vous que le chemin est correct
 
   deploy:
     runs-on: ubuntu-latest
     needs: build
     environment:
       name: 'Production'
-      url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
 
     steps:
       - name: Download artifact from build job
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v2
         with:
           name: node-app
 
-      - name: Unzip artifact for deployment
-        run: unzip release.zip
-
       - name: 'Deploy to Azure Web App'
-        id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
         with:
-          app-name: 'asor44'
-          slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_4F8389931BA04040B6B123CE268C8272 }}
-          package: ${{ github.workspace }}
-
+          app-name: 'asor'
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_C3F2112F7F254D88B5976DFD879BF3D5 }}
+          package: ${{ github.workspace }}/Orion front/dist/orion-front   # Assurez-vous que le chemin est correct
+          
       - name: Publish Artifacts
         uses: actions/upload-artifact@v2
         with:
           name: my-artifacts
-          path: path/to/artifacts
+          path: path/to/artifacts   # Assurez-vous que le chemin est correct
