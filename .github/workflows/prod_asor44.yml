@@ -33,6 +33,9 @@ jobs:
       - name: Copy files to artifact directory
         run: cp -r Orion_front/dist/* artifact-directory
 
+      - name: List artifact directory
+        run: ls -R ${{ github.workspace }}/artifact-directory
+
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
         with:
