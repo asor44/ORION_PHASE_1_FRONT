@@ -59,4 +59,10 @@ jobs:
           app-name: 'asor44'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_4F8389931BA04040B6B123CE268C8272 }}
-          package: .
+          package: ${{ github.workspace }}
+
+      - name: Publish Artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: my-artifacts
+          path: path/to/artifacts
