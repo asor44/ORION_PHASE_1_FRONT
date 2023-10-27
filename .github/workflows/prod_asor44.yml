@@ -14,12 +14,21 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v2
 
       - name: Set up Node.js version
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v2
         with:
-          node-version: '18.x'
+          node-version: 18.10.0
+
+      - name: Install dependencies
+        run: npm install
+        working-directory: Orion_front
+
+      - name: Build app
+        run: npm run build --if-present
+        working-directory: Orion_front
 
       - name: npm install, build, and test
         run: |
