@@ -57,7 +57,7 @@ jobs:
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v2
         with:
-          app-name: 'asor'
+          app-name: 'asor44'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_C3F2112F7F254D88B5976DFD879BF3D5 }}
           package: ${{ github.workspace }}   # Utilisez le répertoire temporaire
 
