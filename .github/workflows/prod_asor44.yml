@@ -50,7 +50,7 @@ jobs:
         with:
           app-name: 'asor'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_C3F2112F7F254D88B5976DFD879BF3D5 }}
-          package: ${{ github.workspace }}/Orion front/dist/orion-front   # Assurez-vous que le chemin est correct
+          package: ${{ github.workspace }}/Orion_front/dist/orion-front   # Assurez-vous que le chemin est correct
           
       - name: Publish Artifacts
         uses: actions/upload-artifact@v2
