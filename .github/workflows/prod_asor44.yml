@@ -21,17 +21,17 @@ jobs:
 
       - name: Install dependencies
         run: npm install
-        working-directory: Orion front   # Assurez-vous que le chemin est correct
+        working-directory: Orion_front   # Assurez-vous que le chemin est correct
 
       - name: Build app
         run: npm run build --if-present
-        working-directory: Orion front   # Assurez-vous que le chemin est correct
+        working-directory: Orion_front   # Assurez-vous que le chemin est correct
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
         with:
           name: node-app
-          path: Orion front/dist/orion-front   # Assurez-vous que le chemin est correct
+          path: Orion_front/dist/orion-front   # Assurez-vous que le chemin est correct
 
   deploy:
     runs-on: ubuntu-latest
