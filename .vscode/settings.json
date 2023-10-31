@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/69169399-4660-4a4c-bf8d-b2fc71155624/resourceGroups/new_SI-ASOR44/providers/Microsoft.Web/sites/asor44",
+    "appService.deploySubpath": "Orion_front"
+}
