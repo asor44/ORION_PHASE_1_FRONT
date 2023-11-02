@@ -7,16 +7,38 @@ import { FooterViewComponent } from './asor44/footer/footer-view/footer-view.com
 import { SignUpViewComponent } from './asor44/sign-up/sign-up-view/sign-up-view.component';
 import { LoginViewComponent } from './asor44/login/login-view/login-view.component';
 
+import {RouterModule, Routes} from "@angular/router";
+import {HomePageComponent} from "./asor44/home-page/home-page.component";
+
+
+
+/***
+ ROUTER ANGULAR
+ path (URL), component (Nom du component)
+ ***/
+const routes: Routes = [
+  { path: '', component: HomePageComponent },
+  { path: 'home', component: HomePageComponent },
+  { path: 'login', component: LoginViewComponent },
+  { path: 'register', component: SignUpViewComponent},
+  { path: '**', redirectTo: '/home' },
+];
+
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterViewComponent,
     SignUpViewComponent,
-    LoginViewComponent
+    LoginViewComponent,
+    HomePageComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot(routes),
+  ],
+  exports: [
+    RouterModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
