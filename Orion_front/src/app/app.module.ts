@@ -10,6 +10,12 @@ import { LoginViewComponent } from './asor44/login/login-view/login-view.compone
 import {RouterModule, Routes} from "@angular/router";
 import {HomePageComponent} from "./asor44/home-page/home-page.component";
 
+
+
+/***
+ ROUTER ANGULAR
+ path (URL), component (Nom du component)
+ ***/
 const routes: Routes = [
   { path: '', component: HomePageComponent },
   { path: 'home', component: HomePageComponent },
