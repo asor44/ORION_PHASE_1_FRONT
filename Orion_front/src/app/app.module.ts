@@ -10,7 +10,9 @@ import { LoginViewComponent } from './asor44/login/login-view/login-view.compone
 import {RouterModule, Routes} from "@angular/router";
 import {HomePageComponent} from "./asor44/home-page/home-page.component";
 import { DiscoveryDayComponent } from './asor44/discovery-day/discovery-day.component';
+import { OrientationCourseComponent } from './asor44/orientation-course/orientation-course.component';
 import { CisorComponent } from './asor44/cisor/cisor.component';
+
 
 
 
@@ -24,6 +26,7 @@ const routes: Routes = [
   { path: 'login', component: LoginViewComponent },
   { path: 'register', component: SignUpViewComponent},
   { path: 'discovery-day', component: DiscoveryDayComponent},
+  { path: 'orientation-course', component: OrientationCourseComponent},
   { path: 'cisor', component: CisorComponent},
   { path: '**', redirectTo: '/home' },
 ];
@@ -37,6 +40,7 @@ const routes: Routes = [
     LoginViewComponent,
     HomePageComponent,
     DiscoveryDayComponent,
+    OrientationCourseComponent
     CisorComponent
   ],
   imports: [
