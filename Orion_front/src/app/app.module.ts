@@ -11,6 +11,8 @@ import {RouterModule, Routes} from "@angular/router";
 import {HomePageComponent} from "./asor44/home-page/home-page.component";
 import { DiscoveryDayComponent } from './asor44/discovery-day/discovery-day.component';
 import { OrientationCourseComponent } from './asor44/orientation-course/orientation-course.component';
+import { CisorComponent } from './asor44/cisor/cisor.component';
+
 
 
 
@@ -25,6 +27,7 @@ const routes: Routes = [
   { path: 'register', component: SignUpViewComponent},
   { path: 'discovery-day', component: DiscoveryDayComponent},
   { path: 'orientation-course', component: OrientationCourseComponent},
+  { path: 'cisor', component: CisorComponent},
   { path: '**', redirectTo: '/home' },
 ];
 
@@ -38,6 +41,7 @@ const routes: Routes = [
     HomePageComponent,
     DiscoveryDayComponent,
     OrientationCourseComponent
+    CisorComponent
   ],
   imports: [
     BrowserModule,
