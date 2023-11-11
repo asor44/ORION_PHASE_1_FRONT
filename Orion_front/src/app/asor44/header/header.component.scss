@@ -1,35 +1,191 @@
-@media screen and (min-width: 768px) {
+.drapeau_francais_blanc {
+  background: #FFFFFF;
+  width: 100%;
+}
 
-  html {
-    background-color: #f2f2f2;
-    font-family: Arial, sans-serif;
+.drapeau_francais_rouge {
+  background: #EF4135;
+  width: 100%;
+}
 
+.drapeau_francais_rouge_gradient {
+  background: linear-gradient(to right, #FFFFFF, #EF4135);
+  width: 50%;
+}
+
+.drapeau_francais_bleu_gradient {
+  background: linear-gradient(to right, #0055A4, #FFFFFF);
+  width: 50%;
+}
+
+.drapeau_francais_bleu {
+  background: #0055A4;
+  width: 100%;
+}
+
+.drapeau_bas {
+  display: flex;
+  height: 3px;
+}
+
+
+@media (max-width: 768px) {
+
+  .pc {
+    display: none;
   }
 
-  nav {
+  .burger-menu {
+    display: inline-flex;
     width: 100%;
-
   }
 
-  .header_ul {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
+  .menu {
+    display: none;
+    flex-direction: column;
+    align-items: center;
   }
 
-  .header_li {
-    text-align: center;
+  .burger-menu {
+    position: relative;
   }
 
-  .header_pc {
-    display: flex;
+  .burger-icon {
+    cursor: pointer;
+    display: block;
+    position: relative;
+    z-index: 1;
+    width: 1%;
+    height: 1%;
   }
-  
+
   .div_header_logo {
     display: flex;
     flex-direction: row;
     width: 100%;
+  }
+
+   .burger-icon span:first-child {
+    transform: rotate(-45deg) translateY(5px);
+  }
+
+  .burger-icon span:last-child {
+    transform: rotate(45deg) translateY(-5px);
+  }
+
+  .logo_asor {
     display: flex;
+    width: 70px;
+    height: 70px;
+  }
+
+  .logo_connection {
+    width: 70px;
+    height: 65px;
+  }
+
+  .asor44 {
+    text-align: center;
+    width: 100%;
+    font-size: 200%;
+    margin: 5%;
+  }
+
+  #burger-toggle:checked~.menu {
+    display: flex;
+  }
+
+  .header_pc {
+    display: flex;
+    width: 100%;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  /* Styles pour l'image de la case à cocher */
+  label {
+    display: inline-block;
+    position: relative;
+    padding-left: 30px;
+    /* Ajustez la taille de la case à cocher en fonction de votre image */
+    cursor: pointer;
+  }
+
+  nav ul {
+    position: fixed;
+    left: -100%;
+    top: 5%;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    transition: 0.25s;
+  }
+
+  nav li {
+    list-style: none;
+    padding: 3px 0;
+  }
+
+  nav.active ul {
+    left: 0;
+  }
+
+  .logo_asor {
+    display: flex;
+    width: 65px;
+    height: 50px;
+  }
+
+  .div_header_logo {
+    display: flex;
+    width: 5%;
+  }
+
+  .div_header {
+    display: flex;
+    width: 100%;
+    text-align: center;
+    height: 50px;
+  }
+
+  h1{
+    text-align: center;
+  }
+
+  ul {
+    display: block;
+    margin: 0;
+    margin-top: 5%;
+    padding: 0;
+  }
+
+}
+
+@media (min-width: 769px) {
+
+  .mobile {
+    display: none;
+    width: 100%;
+  }
+
+  .main-nav {
+    display: none;
+  }
+
+  .main-nav ul {
+    list-style: none;
+    display: flex;
+    width: 100%;
+    font-size: 150%;
+    margin: 0;
+    padding: 0;
+    justify-content: space-between;
+  }
+
+  .main-nav li {
+    margin: 0 20px;
   }
 
   .asor44 {
@@ -54,162 +210,56 @@
     height: 70px;
   }
 
-  .drapeau_francais_blanc {
-    background: #FFFFFF;
-    width: 100%;
-  }
-
-  .drapeau_francais_rouge {
-    background: #EF4135;
-    width: 100%;
-  }
-
-  .drapeau_francais_rouge_gradient {
-    background: linear-gradient(to right, #FFFFFF, #EF4135);
-    width: 50%;
-  }
-
-  .drapeau_francais_bleu_gradient {
-    background: linear-gradient(to right, #0055A4, #FFFFFF);
-    width: 50%;
-  }
-
-  .drapeau_francais_bleu {
-    background: #0055A4;
-    width: 100%;
-  }
-
-  .drapeau_haut {
-    display: flex;
-    height: 10px;
-  }
-
-  .drapeau_bas {
-    display: flex;
-    height: 3px;
-  }
-
-
-  .hidden_pc {
-    display: none;
-  }
-
-  .logo_asor {
-    display: none;
-  }
-}
-
-
-
-
-
-@media screen and (max-width: 767px) {
-
-  html {
-    background-color: #D9D9D9;
-    font-family: Arial, sans-serif;
-
-  }
-
   header {
-    width: 100%;
+    display: flex;
+  }
+
+  .main-nav {
+    display: block;
   }
 
   nav {
-    width: 50%;
+    width: 100%;
   }
 
-
-  .logo_asor {
-    display: flex;
-    width: 70px;
-    height: 70px;
-  }
-
-  .asor44 {
-    text-align: center;
-    width: 70%;
-    font-size: 200%;
-    margin: 5%;
+  .burger-menu {
+    display: none;
   }
 
   .header_ul {
     display: flex;
-    flex-direction: column;
-    padding: 2%;
     width: 100%;
     justify-content: space-between;
   }
 
   .header_li {
-    display: flex;
-    margin: 10px;
+    text-align: center;
   }
 
-  .div_header {
+  .header_pc {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    width: 100%;
+  }
+
+  .logo_asor {
+    display: flex;
+    width: 85px;
+    height: 70px;
   }
 
   .div_header_logo {
     display: flex;
-    flex-direction: row;
-    width: 100%;
+    width: 5%;
+  }
+
+  .div_header {
     display: flex;
-  }
-
-  .drapeau_francais {
     width: 100%;
-    height: 10px;
-    margin: 0px;
+    text-align: center;
   }
 
-  .drapeau_francais_blanc {
-    background: #FFFFFF;
-    width: 100%;
-  }
-
-  .drapeau_francais_rouge {
-    background: #EF4135;
-    width: 100%;
-  }
-
-  .drapeau_francais_rouge_gradient {
-    background: linear-gradient(to right, #FFFFFF, #EF4135);
-    width: 50%;
-  }
-
-  .drapeau_francais_bleu_gradient {
-    background: linear-gradient(to right, #0055A4, #FFFFFF);
-    width: 50%;
-  }
-
-  .drapeau_francais_bleu {
-    background: #0055A4;
-    width: 100%;
-  }
-
-  .drapeau_haut {
-    display: flex;
-    height: 10px;
-  }
-
-  .drapeau_bas {
-    display: flex;
-    height: 3px;
-  }
-
-  .logo_connection {
-    width: 70px;
-    height: 65px;
-  }
-
-  .hidden_mobile {
+  .hidden_pc {
     display: none;
   }
-
-  .info_login {
-    font-size: 100%;
-  }
-
 }
