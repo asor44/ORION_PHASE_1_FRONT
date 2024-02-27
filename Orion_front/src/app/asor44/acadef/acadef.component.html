@@ -5,7 +5,7 @@
   <div class="grid grid-cols-3 gap-4">
     <div class="col-span-1">
       <div class="sticky top-10">
-        <h2 class="text-center mb-4 text-lg font-bold">Partenaires</h2>
+        <h2 class="text-center mb-4 text-lg font-bold">Partenaires de l'ACADEF 44</h2>
         <div class="flex justify-center mb-4">
           <a href="https://www.dsden44.ac-nantes.fr/" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center bg-white rounded-lg p-2 shadow-md hover:shadow-lg transition duration-300">
             <img class="h-12 mx-auto" src="https://asor44.fr/wp-content/uploads/2019/08/Logo_site_DSDEN44_horizontal_vert.jpg" alt="Partenaire 1">
@@ -46,7 +46,35 @@
           <p class="mt-4">Grâce au soutien logistique des Armées (habillement, nourriture, transport …) et aux aides financières de la ville de Nantes, du Conseil régional des Pays de la Loire et des Conseils départementaux de Loire-Atlantique et de Vendée, d’associations et de plusieurs mécènes membres de l’ASOR de Nantes, la formation est entièrement gratuite !</p>
           <img src="https://asor44.fr/wp-content/uploads/2016/12/signature-convention.jpg" class="mt-6 rounded-lg shadow-lg" alt="Signature">
         </div>
+        <hr class="border my-4">
+        <div id="controls-carousel" class="relative w-full h-auto">
+          <div class="relative h-96 w-full overflow-hidden rounded-lg">
+            <div *ngFor="let video of videos; let i = index" [hidden]="i !== currentVideoIndex" [class]="i === currentVideoIndex ? 'animate-slideToRight' : 'animate-slideToLeft'" class="duration-700 ease-in-out h-full">
+              <iframe class="w-full h-full" [src]="video | safeUrl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+          </div>
+          <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" (click)="showPrevVideo()" data-carousel-prev>
+            <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-black/50 dark:bg-gray-800/50 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
+                </svg>
+                <span class="sr-only">Précédent</span>
+            </span>
+          </button>
+          <button type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" (click)="showNextVideo()" data-carousel-next>
+            <span class="rotate-180 inline-flex items-center justify-center w-10 h-10 rounded-full bg-black/50 dark:bg-gray-800/50 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
+                </svg>
+                <span class="sr-only">Suivant</span>
+            </span>
+          </button>
+        </div>
+        <hr class="border my-4">
+
+
       </div>
+
     </div>
 
     <div class="col-span-1">

@@ -15,6 +15,7 @@ import { CisorComponent } from './asor44/cisor/cisor.component';
 import { SingingPageComponent } from './asor44/singing-page/singing-page.component';
 import {FormsModule} from "@angular/forms";
 import { AcadefComponent } from './asor44/acadef/acadef.component';
+import { SafeUrlPipe } from './safe-url.pipe';
 
 
 
@@ -48,7 +49,8 @@ const routes: Routes = [
     OrientationCourseComponent,
     CisorComponent,
     SingingPageComponent,
-    AcadefComponent
+    AcadefComponent,
+    SafeUrlPipe
   ],
   imports: [
     BrowserModule,
