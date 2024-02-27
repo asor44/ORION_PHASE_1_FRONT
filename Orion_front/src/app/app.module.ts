@@ -46,7 +46,7 @@ const routes: Routes = [
     FooterViewComponent,
     SignUpViewComponent,
     LoginViewComponent,
-    ContactComponent
+    ContactComponent,
     HomePageComponent,
     DiscoveryDayComponent,
     OrientationCourseComponent,
