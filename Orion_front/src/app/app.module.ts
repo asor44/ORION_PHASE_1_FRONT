@@ -39,6 +39,7 @@ const routes: Routes = [
   { path: 'help-us', component: HelpUsComponent},
   { path: 'acadef', component: AcadefComponent},
   { path: 'contact', component: ContactComponent},
+  { path: 'sign-up', component: SignUpViewComponent},
   { path: '**', redirectTo: '/home' },
 ];
 

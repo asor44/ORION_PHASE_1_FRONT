@@ -1,37 +1,26 @@
-<!DOCTYPE html>
-<html>
+<div class="bg-white flex justify-center items-center h-screen">
+  <!-- Left: Image -->
+  <div class=" h-screen hidden lg:block">
+    <img src="assets/2021_05_09_PHOTO_COMMEMORATION-8-MAI-©-DR-4.jpg" alt="Placeholder Image" class="object-cover w-full h-full">
+  </div>
 
-<head>
-    <title>Contact</title>
-</head>
+  <div class="lg:p-36 md:p-52 sm:20 p-8 w-1/2 lg:w-1/2">
+    <h1 class="text-2xl font-semibold mb-4">Connexion</h1>
+    <form action="mailto:votreadresse@email.com" method="post" enctype="text/plain">
+      <label for="nom">Nom :</label>
+      <input type="text" id="nom" name="nom" required><br>
 
-<body>
+      <label for="email">Adresse mail :</label>
+      <input type="email" id="email" name="email" required><br>
 
-    <h1>Contactez-nous</h1>
+      <label for="message">Message :</label><br>
+      <textarea id="message" name="message" rows="4" cols="50" required></textarea><br>
 
-    <div class="drapeau">
-        <div class="drapeau_francais_bleu"></div>
-        <div class="drapeau_francais_bleu_gradient"></div>
-        <div class="drapeau_francais_blanc"></div>
-        <div class="drapeau_francais_rouge_gradient"></div>
-        <div class="drapeau_francais_rouge"></div>
+      <input type="submit" value="Envoyer">
+    </form>
+    <!-- Sign up  Link -->
+    <div class="mt-6 text-blue-500 text-center">
+      <a href="#" class="hover:underline">Sign up Here</a>
     </div>
-
-    <div class="div_form">
-
-        <form action="mailto:votreadresse@email.com" method="post" enctype="text/plain">
-            <label for="nom">Nom :</label>
-            <input type="text" id="nom" name="nom" required><br>
-
-            <label for="email">Adresse mail :</label>
-            <input type="email" id="email" name="email" required><br>
-
-            <label for="message">Message :</label><br>
-            <textarea id="message" name="message" rows="4" cols="50" required></textarea><br>
-
-            <input type="submit" value="Envoyer">
-        </form>
-    </div>
-</body>
-
-</html>
+  </div>
+</div>
