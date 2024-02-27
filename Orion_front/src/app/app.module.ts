@@ -18,6 +18,7 @@ import { FormsModule } from "@angular/forms";
 import { HelpUsComponent } from "./asor44/help-us/help-us.component";
 import { AcadefComponent } from './asor44/acadef/acadef.component';
 import { SafeUrlPipe } from './safe-url.pipe';
+import { HomeComponent } from './asor44/home/home.component';
 
 
 
@@ -27,8 +28,8 @@ import { SafeUrlPipe } from './safe-url.pipe';
  path (URL), component (Nom du component)
  ***/
 const routes: Routes = [
-  { path: '', component: AppComponent },
-  { path: 'home', component: AppComponent },
+  { path: '', component: HomeComponent },
+  { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginViewComponent },
   { path: 'register', component: SignUpViewComponent},
   { path: 'discovery-day', component: DiscoveryDayComponent},
@@ -56,7 +57,8 @@ const routes: Routes = [
     SingingPageComponent,
     HelpUsComponent,
     AcadefComponent,
-    SafeUrlPipe
+    SafeUrlPipe,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
