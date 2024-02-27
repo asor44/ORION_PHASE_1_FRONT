@@ -23,8 +23,8 @@ import {FormsModule} from "@angular/forms";
  path (URL), component (Nom du component)
  ***/
 const routes: Routes = [
-  { path: '', component: HomePageComponent },
-  { path: 'home', component: HomePageComponent },
+  { path: '', component: AppComponent },
+  { path: 'home', component: AppComponent },
   { path: 'login', component: LoginViewComponent },
   { path: 'register', component: SignUpViewComponent},
   { path: 'discovery-day', component: DiscoveryDayComponent},
