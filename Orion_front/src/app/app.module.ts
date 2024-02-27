@@ -6,6 +6,7 @@ import { HeaderComponent } from './asor44/header/header.component';
 import { FooterViewComponent } from './asor44/footer/footer-view/footer-view.component';
 import { SignUpViewComponent } from './asor44/sign-up/sign-up-view/sign-up-view.component';
 import { LoginViewComponent } from './asor44/login/login-view/login-view.component';
+import { ContactComponent } from './asor44/contact/contact.component';
 
 import {RouterModule, Routes} from "@angular/router";
 import {HomePageComponent} from "./asor44/home-page/home-page.component";
@@ -34,6 +35,7 @@ const routes: Routes = [
   { path: 'cisor', component: CisorComponent},
   { path: 'singings', component: SingingPageComponent},
   { path: 'acadef', component: AcadefComponent},
+  { path: 'contact', component: ContactComponent},
   { path: '**', redirectTo: '/home' },
 ];
 
@@ -44,6 +46,7 @@ const routes: Routes = [
     FooterViewComponent,
     SignUpViewComponent,
     LoginViewComponent,
+    ContactComponent
     HomePageComponent,
     DiscoveryDayComponent,
     OrientationCourseComponent,
