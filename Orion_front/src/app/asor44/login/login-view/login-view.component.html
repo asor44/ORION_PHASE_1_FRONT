@@ -4,34 +4,33 @@
     <img src="assets/2021_05_09_PHOTO_COMMEMORATION-8-MAI-©-DR-4.jpg" alt="Placeholder Image" class="object-cover w-full h-full">
   </div>
 
-  <div class="lg:p-36 md:p-52 sm:20 p-8 w-1/2 lg:w-1/2">
-    <h1 class="text-2xl font-semibold mb-4">Connexion</h1>
-    <form action="#" method="POST">
-      <!-- Username Input -->
-      <div class="mb-4">
-        <label for="email" class="block text-gray-600">Email</label>
-        <input type="email" id="email" name="email" class="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500" autocomplete="off">
+  <div class="bg-white flex justify-center items-center h-screen">
+    <div class="lg:p-36 md:p-52 sm:20 p-8 w-1/2 lg:w-1/2">
+      <h1 class="text-2xl font-semibold mb-4">Contact</h1>
+      <form action="#" method="POST">
+        <!-- Nom Input -->
+        <div class="mb-4">
+          <label for="nom" class="block text-gray-600">Nom :</label>
+          <input type="text" id="nom" name="nom" class="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500" autocomplete="off">
+        </div>
+        <!-- Email Input -->
+        <div class="mb-4">
+          <label for="email" class="block text-gray-600">Adresse Email :</label>
+          <input type="email" id="email" name="email" class="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500" autocomplete="off">
+        </div>
+        <!-- Message Input -->
+        <div class="mb-4">
+          <label for="message" class="block text-gray-600">Message :</label>
+          <textarea id="message" name="message" rows="4" class="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500" autocomplete="off"></textarea>
+        </div>
+        <!-- Envoyer Button -->
+        <button type="submit" class="bg-black hover:text-blueGray-300 text-white font-semibold rounded-md py-2 px-4 w-full">Envoyer</button>
+      </form>
+      <!-- Sign up  Link -->
+      <div class="mt-6 text-blue-500 text-center">
+        <a href="/sign-up" class="hover:underline">S'inscrire ici</a>
       </div>
-      <!-- Password Input -->
-      <div class="mb-4">
-        <label for="password" class="block text-gray-600">Mot de passe</label>
-        <input type="password" id="password" name="password" class="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500" autocomplete="off">
-      </div>
-      <!-- Remember Me Checkbox -->
-      <div class="mb-4 flex items-center">
-        <input type="checkbox" id="remember" name="remember" class="text-blue-500">
-        <label for="remember" class="text-gray-600 ml-2">Se souvenir de moi</label>
-      </div>
-      <!-- Forgot Password Link -->
-      <div class="mb-6 text-blue-500">
-        <a href="/forgot-password" class="hover:underline">Mot de passe oublié ?</a>
-      </div>
-      <!-- Login Button -->
-      <button type="submit" class="bg-black hover:text-blueGray-300 text-white font-semibold rounded-md py-2 px-4 w-full">Connexion</button>
-    </form>
-    <!-- Sign up  Link -->
-    <div class="mt-6 text-blue-500 text-center">
-      <a href="/sign-up" class="hover:underline">Sign up Here</a>
     </div>
   </div>
+
 </div>
