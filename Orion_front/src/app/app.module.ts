@@ -4,7 +4,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './asor44/header/header.component';
 import { FooterViewComponent } from './asor44/footer/footer-view/footer-view.component';
-import { SignUpViewComponent } from './asor44/sign-up/sign-up-view/sign-up-view.component';
 import { LoginViewComponent } from './asor44/login/login-view/login-view.component';
 import { ContactComponent } from './asor44/contact/contact.component';
 
@@ -19,6 +18,7 @@ import { HelpUsComponent } from "./asor44/help-us/help-us.component";
 import { AcadefComponent } from './asor44/acadef/acadef.component';
 import { SafeUrlPipe } from './safe-url.pipe';
 import { HomeComponent } from './asor44/home/home.component';
+import { RegisterComponent } from './asor44/register/register.component';
 
 
 
@@ -31,7 +31,7 @@ const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginViewComponent },
-  { path: 'register', component: SignUpViewComponent},
+  { path: 'register', component: RegisterComponent},
   { path: 'discovery-day', component: DiscoveryDayComponent},
   { path: 'orientation-course', component: OrientationCourseComponent},
   { path: 'cisor', component: CisorComponent},
@@ -39,7 +39,6 @@ const routes: Routes = [
   { path: 'help-us', component: HelpUsComponent},
   { path: 'acadef', component: AcadefComponent},
   { path: 'contact', component: ContactComponent},
-  { path: 'sign-up', component: SignUpViewComponent},
   { path: '**', redirectTo: '/home' },
 ];
 
@@ -48,7 +47,6 @@ const routes: Routes = [
     AppComponent,
     HeaderComponent,
     FooterViewComponent,
-    SignUpViewComponent,
     LoginViewComponent,
     ContactComponent,
     HomePageComponent,
@@ -59,7 +57,8 @@ const routes: Routes = [
     HelpUsComponent,
     AcadefComponent,
     SafeUrlPipe,
-    HomeComponent
+    HomeComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
