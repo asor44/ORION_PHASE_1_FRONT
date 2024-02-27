@@ -8,13 +8,14 @@ import { SignUpViewComponent } from './asor44/sign-up/sign-up-view/sign-up-view.
 import { LoginViewComponent } from './asor44/login/login-view/login-view.component';
 import { ContactComponent } from './asor44/contact/contact.component';
 
-import {RouterModule, Routes} from "@angular/router";
-import {HomePageComponent} from "./asor44/home-page/home-page.component";
+import { RouterModule, Routes } from "@angular/router";
+import { HomePageComponent } from "./asor44/home-page/home-page.component";
 import { DiscoveryDayComponent } from './asor44/discovery-day/discovery-day.component';
 import { OrientationCourseComponent } from './asor44/orientation-course/orientation-course.component';
 import { CisorComponent } from './asor44/cisor/cisor.component';
 import { SingingPageComponent } from './asor44/singing-page/singing-page.component';
-import {FormsModule} from "@angular/forms";
+import { FormsModule } from "@angular/forms";
+import { HelpUsComponent } from "./asor44/help-us/help-us.component";
 import { AcadefComponent } from './asor44/acadef/acadef.component';
 import { SafeUrlPipe } from './safe-url.pipe';
 
@@ -34,6 +35,7 @@ const routes: Routes = [
   { path: 'orientation-course', component: OrientationCourseComponent},
   { path: 'cisor', component: CisorComponent},
   { path: 'singings', component: SingingPageComponent},
+  { path: 'help-us', component: HelpUsComponent},
   { path: 'acadef', component: AcadefComponent},
   { path: 'contact', component: ContactComponent},
   { path: '**', redirectTo: '/home' },
@@ -52,6 +54,7 @@ const routes: Routes = [
     OrientationCourseComponent,
     CisorComponent,
     SingingPageComponent,
+    HelpUsComponent,
     AcadefComponent,
     SafeUrlPipe
   ],
