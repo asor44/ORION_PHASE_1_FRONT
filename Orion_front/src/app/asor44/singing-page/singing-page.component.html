@@ -1,0 +1,73 @@
+<app-header></app-header>
+<div class="bg-gray-100 min-h-screen p-8">
+  <div class="max-w-[60%] mx-auto p-6 rounded-lg">
+    <h1 class="text-2xl font-bold mb-4 text-center">Chants Militaires</h1>
+    <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+      <div class="w-full sm:w-1/2">
+        <div class="p-4">
+          <label for="chantType" class="block text-sm font-medium text-gray-700">Type de Chant</label>
+          <select id="chantType" name="chantType" [(ngModel)]="selectedChantType"
+                  class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md">
+            <option value="default" selected="selected">Sélectionnez un type</option>
+            <option *ngFor="let chantType of chantTypes" [value]="chantType.name">{{ chantType.name }}</option>
+          </select>
+        </div>
+      </div>
+      <div class="flex flex-row sm:flex-row">
+        <div *ngIf="selectedChantType !== 'default'; else defaultText">
+          <ul [class]="'grid grid-cols-2 gap-2'">
+            <li *ngFor="let chant of filteredChants" (click)="selectChant(chant)" class="cursor-pointer">
+              <div class="text-lg font-semibold">{{ chant.nom }}</div>
+            </li>
+          </ul>
+        </div>
+
+
+        <div *ngIf="selectedChant && selectedChantType !== 'default';" class="mx-4 md:ps-[10%]">
+          <div class="audio-player">
+            <div class="flex justify-center mb-4">
+              <audio src="{{selectedChant.url}}" controls>
+                Your browser does not support the audio element.
+              </audio>
+            </div>
+          </div>
+
+          <div *ngFor="let couplet of selectedChant.couplets; let i = index">
+            <table class="w-full mb-4"> <!-- mb-4 pour ajouter de l'espace entre les tables -->
+              <tr class="align-top">
+                <td class="font-semibold w-2/5 text-right pr-8">{{ couplet.type == 'refrain' ? 'Refrain' : 'Couplet ' + (i + 1) }}</td>
+                <td class="w-3/5">
+                  <div *ngFor="let ligne of couplet.texte" class="mb-1"> <!-- mb-1 pour espacer les lignes de texte -->
+                    {{ ligne }}
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+
+
+
+        <ng-template #defaultText>
+          <div class="entry-content">
+            <div class="titre">Le chant est partie intégrante de la tradition.</div>
+            <div class="text2">« Le chant ne permet pas seulement d’entretenir le culte de nos souvenirs militaires,<br>
+              il est aussi un élan et un stimulant. » (TTA 107)<p></p>
+              <p>« <i>A la différence du chant de popote où la gaieté, la fronde et l’humour se répondent,<br>
+                du chant de bivouac aux accents parfois nostalgiques, toujours sentimentaux,<br>
+                le chant de marche a pour quadruple but <br>
+                de soutenir les énergies,<br>
+                d’affirmer la cadence,<br>
+                de fondre quarante timbres en un seul chant éveillant en chacun le sens profond de la collectivité<br>
+                et de donner à la superbe d’une troupe en mouvement un prolongement sonore qui la valorise</i> ». </p>
+              <p> Le chant est la première manifestation de la cohésion d’un groupe.<br>
+                Il concrétise l’esprit d’équipe et exprime la force morale de l’unité dont il reflète l’âme.</p></div>
+          </div>
+        </ng-template>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+<app-footer-view/>

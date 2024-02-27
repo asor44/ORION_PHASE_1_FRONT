@@ -12,6 +12,8 @@ import {HomePageComponent} from "./asor44/home-page/home-page.component";
 import { DiscoveryDayComponent } from './asor44/discovery-day/discovery-day.component';
 import { OrientationCourseComponent } from './asor44/orientation-course/orientation-course.component';
 import { CisorComponent } from './asor44/cisor/cisor.component';
+import { SingingPageComponent } from './asor44/singing-page/singing-page.component';
+import {FormsModule} from "@angular/forms";
 
 
 
@@ -28,6 +30,7 @@ const routes: Routes = [
   { path: 'discovery-day', component: DiscoveryDayComponent},
   { path: 'orientation-course', component: OrientationCourseComponent},
   { path: 'cisor', component: CisorComponent},
+  { path: 'singings', component: SingingPageComponent},
   { path: '**', redirectTo: '/home' },
 ];
 
@@ -40,12 +43,14 @@ const routes: Routes = [
     LoginViewComponent,
     HomePageComponent,
     DiscoveryDayComponent,
-    OrientationCourseComponent
-    CisorComponent
+    OrientationCourseComponent,
+    CisorComponent,
+    SingingPageComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),
+    FormsModule,
   ],
   exports: [
     RouterModule,
