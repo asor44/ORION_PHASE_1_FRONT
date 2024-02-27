@@ -9629,17 +9629,9 @@ export class SingingPageComponent {
   };
 
 
-
-
-
-
   selectChant(chant: any) {
     this.selectedChant = chant;
     console.log(this.selectedChant)
 
-  }
-
-  calculateColumnCount(totalChants: number): number {
-    return totalChants > 20 ? 6 : 3;
   }
 }
