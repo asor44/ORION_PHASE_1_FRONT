@@ -19,6 +19,7 @@ import { AcadefComponent } from './asor44/acadef/acadef.component';
 import { SafeUrlPipe } from './safe-url.pipe';
 import { HomeComponent } from './asor44/home/home.component';
 import { RegisterComponent } from './asor44/register/register.component';
+import { ObjectComponent } from './asor44/object/object.component';
 
 
 
@@ -39,6 +40,7 @@ const routes: Routes = [
   { path: 'help-us', component: HelpUsComponent},
   { path: 'acadef', component: AcadefComponent},
   { path: 'contact', component: ContactComponent},
+  { path: 'object', component: ObjectComponent},
   { path: '**', redirectTo: '/home' },
 ];
 
@@ -58,7 +60,8 @@ const routes: Routes = [
     AcadefComponent,
     SafeUrlPipe,
     HomeComponent,
-    RegisterComponent
+    RegisterComponent,
+    ObjectComponent
   ],
   imports: [
     BrowserModule,
