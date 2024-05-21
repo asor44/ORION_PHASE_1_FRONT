@@ -21,6 +21,7 @@ import { HomeComponent } from './asor44/home/home.component';
 import { RegisterComponent } from './asor44/register/register.component';
 import { ObjectComponent } from './asor44/object/object.component';
 import { ChantierComponent } from './asor44/chantier/chantier.component';
+import { SoldierCodeComponent } from './asor44/soldier-code/soldier-code.component';
 
 
 
@@ -43,6 +44,7 @@ const routes: Routes = [
   { path: 'contact', component: ContactComponent},
   { path: 'object', component: ObjectComponent},
   { path: 'chantier', component: ChantierComponent},
+  { path: 'soldier', component: SoldierCodeComponent},
   { path: '**', redirectTo: '/home' },
 ];
 
@@ -64,7 +66,8 @@ const routes: Routes = [
     HomeComponent,
     RegisterComponent,
     ObjectComponent,
-    ChantierComponent
+    ChantierComponent,
+    SoldierCodeComponent
   ],
   imports: [
     BrowserModule,
