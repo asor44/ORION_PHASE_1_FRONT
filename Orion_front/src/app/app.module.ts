@@ -21,6 +21,7 @@ import { HomeComponent } from './asor44/home/home.component';
 import { RegisterComponent } from './asor44/register/register.component';
 import { ObjectComponent } from './asor44/object/object.component';
 import { ChantierComponent } from './asor44/chantier/chantier.component';
+import { GradesComponent } from './asor44/grades/grades.component';
 
 
 
@@ -33,16 +34,17 @@ const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginViewComponent },
-  { path: 'register', component: RegisterComponent},
-  { path: 'discovery-day', component: DiscoveryDayComponent},
-  { path: 'orientation-course', component: OrientationCourseComponent},
-  { path: 'cisor', component: CisorComponent},
-  { path: 'singings', component: SingingPageComponent},
-  { path: 'help-us', component: HelpUsComponent},
-  { path: 'acadef', component: AcadefComponent},
-  { path: 'contact', component: ContactComponent},
-  { path: 'object', component: ObjectComponent},
-  { path: 'chantier', component: ChantierComponent},
+  { path: 'register', component: RegisterComponent },
+  { path: 'discovery-day', component: DiscoveryDayComponent },
+  { path: 'orientation-course', component: OrientationCourseComponent },
+  { path: 'cisor', component: CisorComponent },
+  { path: 'singings', component: SingingPageComponent },
+  { path: 'help-us', component: HelpUsComponent },
+  { path: 'acadef', component: AcadefComponent },
+  { path: 'contact', component: ContactComponent },
+  { path: 'object', component: ObjectComponent },
+  { path: 'grades', component: GradesComponent },
+  { path: 'chantier', component: ChantierComponent },
   { path: '**', redirectTo: '/home' },
 ];
 
@@ -64,7 +66,8 @@ const routes: Routes = [
     HomeComponent,
     RegisterComponent,
     ObjectComponent,
-    ChantierComponent
+    ChantierComponent,
+    GradesComponent
   ],
   imports: [
     BrowserModule,
