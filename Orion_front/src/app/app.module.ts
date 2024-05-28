@@ -23,6 +23,7 @@ import { ObjectComponent } from './asor44/object/object.component';
 import { ChantierComponent } from './asor44/chantier/chantier.component';
 import { GradesComponent } from './asor44/grades/grades.component';
 import { SoldierCodeComponent } from './asor44/soldier-code/soldier-code.component';
+import { FlagComponent } from './asor44/flag/flag.component';
 
 
 
@@ -46,7 +47,8 @@ const routes: Routes = [
   { path: 'object', component: ObjectComponent },
   { path: 'grades', component: GradesComponent },
   { path: 'chantier', component: ChantierComponent },
-  { path: 'soldier', component: SoldierCodeComponent},
+  { path: 'soldier', component: SoldierCodeComponent },
+  { path: 'flag', component: FlagComponent },
   { path: '**', redirectTo: '/home' },
 ];
 
@@ -69,8 +71,9 @@ const routes: Routes = [
     RegisterComponent,
     ObjectComponent,
     ChantierComponent,
-    GradesComponent
-    SoldierCodeComponent
+    GradesComponent,
+    SoldierCodeComponent,
+    FlagComponent
   ],
   imports: [
     BrowserModule,
