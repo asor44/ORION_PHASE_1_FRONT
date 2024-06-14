@@ -59,3 +59,4 @@ Erwan:
 
     - toutes les autres pages
         - les creer en pages blanche avec juste le titre de la page afin de creer les routes et faire les liens entres les pages
+
