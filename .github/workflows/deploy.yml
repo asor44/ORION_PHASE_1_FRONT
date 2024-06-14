@@ -10,7 +10,7 @@
 on:
   push:
     branches:
-      - main
+      - dev
 
 env:
   AZURE_WEBAPP_NAME: asor44   # set this to your application's name
