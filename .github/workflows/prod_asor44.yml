@@ -6,10 +6,10 @@ name: Build and deploy Node.js app to Azure Web App - asor44
 on:
   push:
     branches:
-      - prod
+      - dev
   pull_request:
     branches:
-      - prod
+      - dev
   workflow_dispatch:
 
 jobs:
