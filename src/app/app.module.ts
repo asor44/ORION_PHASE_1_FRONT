@@ -24,6 +24,7 @@ import { ChantierComponent } from './asor44/chantier/chantier.component';
 import { GradesComponent } from './asor44/grades/grades.component';
 import { SoldierCodeComponent } from './asor44/soldier-code/soldier-code.component';
 import { FlagComponent } from './asor44/flag/flag.component';
+import { MedalsComponent } from './asor44/medals/medals.component';
 
 
 
@@ -49,6 +50,7 @@ const routes: Routes = [
   { path: 'chantier', component: ChantierComponent },
   { path: 'soldier', component: SoldierCodeComponent },
   { path: 'flag', component: FlagComponent },
+  { path: 'medals', component: MedalsComponent},
   { path: '**', redirectTo: '/home' },
 ];
 
@@ -73,7 +75,8 @@ const routes: Routes = [
     ChantierComponent,
     GradesComponent,
     SoldierCodeComponent,
-    FlagComponent
+    FlagComponent,
+    MedalsComponent
   ],
   imports: [
     BrowserModule,
