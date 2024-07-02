@@ -25,6 +25,7 @@ import { GradesComponent } from './asor44/grades/grades.component';
 import { SoldierCodeComponent } from './asor44/soldier-code/soldier-code.component';
 import { FlagComponent } from './asor44/flag/flag.component';
 import { MedalsComponent } from './asor44/medals/medals.component';
+import { InternalReglementComponent } from './asor44/internal-reglement/internal-reglement.component';
 
 
 
@@ -48,9 +49,10 @@ const routes: Routes = [
   { path: 'object', component: ObjectComponent },
   { path: 'grades', component: GradesComponent },
   { path: 'chantier', component: ChantierComponent },
-  { path: 'soldier', component: SoldierCodeComponent },
+  { path: 'soldierCode', component: SoldierCodeComponent },
   { path: 'flag', component: FlagComponent },
   { path: 'medals', component: MedalsComponent},
+  { path: 'internal_rules', component: InternalReglementComponent},
   { path: '**', redirectTo: '/home' },
 ];
 
@@ -76,7 +78,8 @@ const routes: Routes = [
     GradesComponent,
     SoldierCodeComponent,
     FlagComponent,
-    MedalsComponent
+    MedalsComponent,
+    InternalReglementComponent
   ],
   imports: [
     BrowserModule,
