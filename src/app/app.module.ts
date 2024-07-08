@@ -24,6 +24,7 @@ import { ChantierComponent } from './asor44/chantier/chantier.component';
 import { GradesComponent } from './asor44/grades/grades.component';
 import { SoldierCodeComponent } from './asor44/soldier-code/soldier-code.component';
 import { FlagComponent } from './asor44/flag/flag.component';
+import {CeremonialMiliComponent} from "./asor44/ceremonial-mili/ceremonial-mili.component";
 import { MedalsComponent } from './asor44/medals/medals.component';
 import { InternalReglementComponent } from './asor44/internal-reglement/internal-reglement.component';
 
@@ -51,6 +52,7 @@ const routes: Routes = [
   { path: 'chantier', component: ChantierComponent },
   { path: 'soldierCode', component: SoldierCodeComponent },
   { path: 'flag', component: FlagComponent },
+  { path: 'ceremonial', component: CeremonialMiliComponent },
   { path: 'medals', component: MedalsComponent},
   { path: 'internal_rules', component: InternalReglementComponent},
   { path: '**', redirectTo: '/home' },
@@ -63,6 +65,7 @@ const routes: Routes = [
     FooterViewComponent,
     LoginViewComponent,
     ContactComponent,
+    CeremonialMiliComponent,
     HomePageComponent,
     DiscoveryDayComponent,
     OrientationCourseComponent,
@@ -88,6 +91,8 @@ const routes: Routes = [
   ],
   exports: [
     RouterModule,
+    FooterViewComponent,
+    HeaderComponent,
   ],
   providers: [],
   bootstrap: [AppComponent]
