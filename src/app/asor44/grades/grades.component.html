@@ -1,166 +1,55 @@
 <app-header></app-header>
 
 <body class="text-center">
-  <div class="container mx-auto py-8">
-    <div class="grid grid-cols-3">
+  <div class="bg-gray-100 min-h-screen p-8">
+    <div class="max-w-[60%] mx-auto p-6 rounded-lg">
+      <h1 class="text-2xl font-bold mb-4 text-center">Les grades des armées</h1>
+      <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+        <div class="w-full sm:w-1/2">
+          <div class="p-4">
+            <label for="army" class="block text-sm font-medium text-gray-700">Armée</label>
+            <select id="army" name="army" [(ngModel)]="selectedArmy" (ngModelChange)="selectArmy($event)"
+              class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md">
+              <option value="default" selected="selected">Sélectionnez une armée</option>
+              <option *ngFor="let army of armeeType" [value]="army.name">{{ army.name }}</option>
+            </select>
+          </div>
+        </div>
 
-      <div class="p-4">Nom du grade</div>
-      <div class="p-4">Appelation</div>
-      <div class="p-4">Épaulettes</div>
+        <div class="flex flex-col w-full">
+          <div *ngIf="filteredArmy && selectedArmy !== 'default'; else defaultText">
+            <div class="mx-4">
+              <div *ngFor="let categorie of filteredArmy?.categories; let i = index">
+                <br><div class="drapeau-francais h-1 w-full"></div><br>
+                <h2 class="text-xl font-bold mb-2">{{ categorie.title }}</h2>
+                <br><div class="drapeau-francais h-1 w-full"></div><br>
+                <div *ngFor="let grade of categorie.grades; let j = index" class="border-b border-gray-300 mb-4 pb-2">
+                  <div class="text-lg font-semibold">{{ grade.name }}</div>
+                  <div class="text-sm">{{ grade.appelation }}</div>
+                  <div class="mt-2 flex justify-center items-center">
+                    <img [src]="grade.image" alt="{{ grade.name }}" class="h-17 mr-5">
+                    <img [src]="grade.image_hv" alt="{{ grade.name }}" class="h-14 mr-5">
+                    <img [src]="grade.image_bv" alt="{{ grade.name }}" class="h-14">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <ng-template #defaultText>
+            <div class="entry-content">
+              <div class="titre">Les grades des armées française</div>
+              <div class="text2">
+                <p>Les grades militaires dans l'armée française structurent la hiérarchie et déterminent les
+                  responsabilités et l'autorité des membres des forces armées. Voici un aperçu des principaux grades
+                  dans l'armée de terre française, divisés en trois grandes catégories : les militaires du rang, les
+                  sous-officiers et les officiers.</p>
+              </div>
+            </div>
+          </ng-template>
+        </div>
+      </div>
     </div>
-    <div class="drapeau-francais h-2 w-full"></div>
-
-    <div class="grid">
-      <div class="p-4 w-full text-center h-24"><a class="justify-center"><br>Hommes du rang</a></div>
-      <div class="drapeau-francais h-2 w-full"></div>
-
-    </div>
-
-    <div class="grid grid-cols-3">
-
-      <div class="p-4"><br>Seconde classe</div>
-      <div class="p-4"><br>Seconde class / soldat</div>
-      <div class="p-4 flex justify-center"> <img src="../../../assets/grades/SDT"></div>
-
-      <div class="p-4">Première classe</div>
-      <div class="p-4"><br>Première classe / soldat</div>
-      <div class="p-4 flex justify-center"><img src="../../../assets/grades/1CL"></div>
-
-      <div class="p-4"><br>Caporal / Brigadier</div>
-      <div class="p-4"><br>Caporal / Brigadier</div>
-      <div class="p-4 flex justify-center"><img src="../../../assets/grades/CPL"></div>
-
-      <div class="p-4"><br>Caporal-chef / Brigadier-chef</div>
-      <div class="p-4"><br>Caporal-chef / Brigadier-chef</div>
-      <div class="p-4 flex justify-center"><img src="../../../assets/grades/CCH"></div>
-
-      <div class="p-4"><br>Caporal-chef de première classe</div>
-      <div class="p-4"><br>Caporal-chef / Brigadier-chef</div>
-      <div class="p-4 flex justify-center"><img src="../../../assets/grades/CC1"></div>
-
-    </div>
-    <div class="grid gap-1">
-
-      <div class="p-4 w-full text-center"><a class="justify-center">Sous-officiers subalternes</a></div>
-      <div class="drapeau-francais h-2 w-full"></div>
-
-    </div>
-
-    <div class="grid grid-cols-3">
-
-      <div class="p-4"><br>Sergent / Maréchal des logis</div>
-      <div class="p-4"><br>Sergent / Maréchal des logis</div>
-      <div class="p-4 flex justify-center"><img src="../../../assets/grades/SGT"></div>
-
-      <div class="p-4"><br>Sergent-chef / Maréchal des logis-chef</div>
-      <div class="p-4"><br>Chef</div>
-      <div class="p-4 flex justify-center"><img src="../../../assets/grades/SCH"></div>
-
-      <div class="p-4"><br>Sergent-chef BM2</div>
-      <div class="p-4"><br>Chef</div>
-      <div class="p-4 flex justify-center"><img src="../../../assets/grades/SCHBM2"></div>
-
-    </div>
-    <div class="grid gap-1">
-
-      <div class="p-4 w-full text-center"><a class="justify-center">Sous-officiers</a></div>
-      <div class="drapeau-francais h-2 w-full"></div>
-
-    </div>
-
-    <div class="grid grid-cols-3">
-
-      <div class="p-4"><br>Adjudant</div>
-      <div class="p-4"><br>Mon Adjudant <br> Adjudant (Féminin)</div>
-      <div class="p-4 flex justify-center"><img src="../../../assets/grades/ADJ"></div>
-
-      <div class="p-4"><br>Adjudant-chef</div>
-      <div class="p-4"><br>Mon Adjudant-chef <br> Adjudant-chef (Féminin)</div>
-      <div class="p-4 flex justify-center"><img src="../../../assets/grades/ADC"></div>
-
-      <div class="p-4"><br>Major</div>
-      <div class="p-4"><br>Major</div>
-      <div class="p-4 flex justify-center"><img src="../../../assets/grades/MJR"></div>
-    </div>
-    <div class="grid gap-1">
-
-      <div class="p-4 w-full text-center"><a>Officiers subalternes</a></div>
-      <div class="drapeau-francais h-2 w-full"></div>
-
-    </div>
-
-    <div class="grid grid-cols-3">
-
-      <div class="p-4"><br><br><br>Élêve-officiers</div>
-      <div class="p-4"><br><br><br>Mon lieutenant <br> Lieutenant (Féminin)</div>
-      <div class="p-4 flex justify-center"><img src="../../../assets/grades/EO"></div>
-
-      <div class="p-4"><br>Aspirant</div>
-      <div class="p-4"><br>Mon lieutenant <br> Lieutenant (Féminin)</div>
-      <div class="p-4 flex justify-center"><img src="../../../assets/grades/ASP"></div>
-
-      <div class="p-4"><br>Sous-lieutenant</div>
-      <div class="p-4"><br>Mon lieutenant <br> Lieutenant (Féminin)</div>
-      <div class="p-4 flex justify-center"><img src="../../../assets/grades/SLT"></div>
-
-      <div class="p-4"><br>Lieutenant</div>
-      <div class="p-4"><br>Mon lieutenant <br> Lieutenant (Féminin)</div>
-      <div class="p-4 flex justify-center"><img src="../../../assets/grades/LTN"></div>
-
-      <div class="p-4"><br>Capitaine</div>
-      <div class="p-4"><br>Mon capitaine <br> Capitaine (Féminin)</div>
-      <div class="p-4 flex justify-center"><img src="../../../assets/grades/CNE"></div>
-    </div>
-
-    <div class="grid gap-1">
-
-      <div class="p-4 w-full text-center"><a>Officiers supérieurs</a></div>
-      <div class="drapeau-francais h-2 w-full"></div>
-
-    </div>
-
-    <div class="grid grid-cols-3">
-
-      <div class="p-4"><br>Commandant</div>
-      <div class="p-4"><br>Mon commandant <br> Commandant (Féminin)</div>
-      <div class="p-4 flex justify-center"><img src="../../../assets/grades/CDT"></div>
-
-      <div class="p-4"><br>Lieutenant-colonel</div>
-      <div class="p-4"><br>Mon colonel <br> Colonel (Féminin)</div>
-      <div class="p-4 flex justify-center"><img src="../../../assets/grades/LCL"></div>
-
-      <div class="p-4"><br>Colonel</div>
-      <div class="p-4"><br>Mon colonel <br> Colonel (Féminin)</div>
-      <div class="p-4 flex justify-center"><img src="../../../assets/grades/COL"></div>
-
-    </div>
-    <div class="grid gap-1">
-
-      <div class="p-4 w-full text-center"><a>Officiers généraux</a></div>
-      <div class="drapeau-francais h-2 w-full"></div>
-
-    </div>
-
-    <div class="grid grid-cols-3">
-
-      <div class="p-4">Général de brigade</div>
-      <div class="p-4">Mon général <br> Général (Féminin)</div>
-      <div class="p-4 flex justify-center"><img src="../../../assets/grades/GBR"></div>
-
-      <div class="p-4">Général de division</div>
-      <div class="p-4">Mon général <br> Général (Féminin)</div>
-      <div class="p-4 flex justify-center"><img src="../../../assets/grades/GDI"></div>
-
-      <div class="p-4">Général de corps d'armée</div>
-      <div class="p-4">Mon général <br> Général (Féminin)</div>
-      <div class="p-4 flex justify-center"><img src="../../../assets/grades/GCA"></div>
-
-      <div class="p-4">Général d'armée</div>
-      <div class="p-4">Mon général <br> Général (Féminin)</div>
-      <div class="p-4 flex justify-center"><img src="../../../assets/grades/GA"></div>
-
-    </div>
-
   </div>
 </body>
 
