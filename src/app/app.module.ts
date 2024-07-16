@@ -13,7 +13,7 @@ import { DiscoveryDayComponent } from './asor44/discovery-day/discovery-day.comp
 import { OrientationCourseComponent } from './asor44/orientation-course/orientation-course.component';
 import { CisorComponent } from './asor44/cisor/cisor.component';
 import { SingingPageComponent } from './asor44/singing-page/singing-page.component';
-import { FormsModule } from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { HelpUsComponent } from "./asor44/help-us/help-us.component";
 import { AcadefComponent } from './asor44/acadef/acadef.component';
 import { SafeUrlPipe } from './safe-url.pipe';
@@ -27,6 +27,7 @@ import { FlagComponent } from './asor44/flag/flag.component';
 import {CeremonialMiliComponent} from "./asor44/ceremonial-mili/ceremonial-mili.component";
 import { MedalsComponent } from './asor44/medals/medals.component';
 import { InternalReglementComponent } from './asor44/internal-reglement/internal-reglement.component';
+import { ProfilComponent } from './asor44/profil/profil.component';
 
 
 
@@ -55,6 +56,7 @@ const routes: Routes = [
   { path: 'ceremonial', component: CeremonialMiliComponent },
   { path: 'medals', component: MedalsComponent},
   { path: 'internal_rules', component: InternalReglementComponent},
+  { path: 'profil', component: ProfilComponent},
   { path: '**', redirectTo: '/home' },
 ];
 
@@ -82,12 +84,14 @@ const routes: Routes = [
     SoldierCodeComponent,
     FlagComponent,
     MedalsComponent,
-    InternalReglementComponent
+    InternalReglementComponent,
+    ProfilComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),
     FormsModule,
+    ReactiveFormsModule,
   ],
   exports: [
     RouterModule,
