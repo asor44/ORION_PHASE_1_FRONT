@@ -90,7 +90,7 @@ const routes: Routes = [
     FlagComponent,
     MedalsComponent,
     InternalReglementComponent,
-    HymneComponent
+    HymneComponent,
     ProfilComponent,
     ItemListComponent,
   ],
