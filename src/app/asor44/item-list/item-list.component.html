@@ -1,0 +1,21 @@
+<app-header/>
+
+<h2 class="text-center my-10 text-4xl mx-auto">Articles</h2>
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 place-items-center mt-5">
+  <div *ngFor="let item of pagedItems" class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+    <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg" alt="img">
+    <div class="flex flex-col justify-between p-4 leading-normal">
+      <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{ item.title }}</h5>
+      <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{{ item.description }}</p>
+    </div>
+  </div>
+</div>
+
+
+<div class="flex justify-center my-10">
+  <button (click)="setPage(currentPage - 1)" [disabled]="currentPage === 1" class="px-4 py-2 mx-1 bg-indigo-600 text-white rounded-md">Précédent</button>
+  <button (click)="setPage(currentPage + 1)" [disabled]="currentPage === totalPages" class="px-4 py-2 mx-1 bg-indigo-600 text-white rounded-md">Suivant</button>
+</div>
+
+<app-footer-view/>

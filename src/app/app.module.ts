@@ -28,6 +28,7 @@ import {CeremonialMiliComponent} from "./asor44/ceremonial-mili/ceremonial-mili.
 import { MedalsComponent } from './asor44/medals/medals.component';
 import { InternalReglementComponent } from './asor44/internal-reglement/internal-reglement.component';
 import { ProfilComponent } from './asor44/profil/profil.component';
+import { ItemListComponent } from './asor44/item-list/item-list.component';
 
 
 
@@ -57,6 +58,7 @@ const routes: Routes = [
   { path: 'medals', component: MedalsComponent},
   { path: 'internal_rules', component: InternalReglementComponent},
   { path: 'profil', component: ProfilComponent},
+  { path: 'articles', component: ItemListComponent},
   { path: '**', redirectTo: '/home' },
 ];
 
@@ -85,7 +87,8 @@ const routes: Routes = [
     FlagComponent,
     MedalsComponent,
     InternalReglementComponent,
-    ProfilComponent
+    ProfilComponent,
+    ItemListComponent,
   ],
   imports: [
     BrowserModule,
