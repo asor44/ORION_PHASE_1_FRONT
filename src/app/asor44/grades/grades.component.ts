@@ -626,7 +626,7 @@ export class GradesComponent {
             },
             {
               name: "Sergent-chef / Maréchal des logis-chef",
-              appelation: "Sergent-chef / Maréchal des logis-chef",
+              appelation: "Chef",
               image: "../../../assets/grades/gendarmerie/MDC",
               image_hv: "../../../assets/grades/gendarmerie/SGH_HV",
               image_bv: "../../../assets/grades/gendarmerie/SGH_BV"
@@ -638,14 +638,14 @@ export class GradesComponent {
           grades: [
             {
               name: "Adjudant",
-              appelation: "Adjudant",
+              appelation: "Mon adjudant ou adjudant (féminin)",
               image: "../../../assets/grades/gendarmerie/ADJ",
               image_hv: "../../../assets/grades/gendarmerie/ADJ_HV",
               image_bv: "../../../assets/grades/gendarmerie/ADJ_BV"
             },
             {
               name: "Adjudant-chef",
-              appelation: "Adjudant-chef",
+              appelation: "Mon adjudant-chef ou adjudant-chef (féminin)",
               image: "../../../assets/grades/gendarmerie/ADC",
               image_hv: "../../../assets/grades/gendarmerie/ADC_HV",
               image_bv: "../../../assets/grades/gendarmerie/ADC_BV"
@@ -664,28 +664,28 @@ export class GradesComponent {
           grades: [
             {
               name: "Aspirant",
-              appelation: "Aspirant",
+              appelation: "Mon lieutenant ou lieutenant (féminin)",
               image: "../../../assets/grades/gendarmerie/ASP",
               image_hv: "../../../assets/grades/gendarmerie/ASP_HV",
               image_bv: "../../../assets/grades/gendarmerie/ASP_BV"
             },
             {
               name: "Sous-lieutenant",
-              appelation: "Sous-lieutenant",
+              appelation: "Mon lieutenant ou lieutenant (féminin)",
               image: "../../../assets/grades/gendarmerie/SLT",
               image_hv: "../../../assets/grades/gendarmerie/SLT_HV",
               image_bv: "../../../assets/grades/gendarmerie/SLT_BV"
             },
             {
               name: "Lieutenant",
-              appelation: "Lieutenant",
+              appelation: "Mon lieutenant ou lieutenant (féminin)",
               image: "../../../assets/grades/gendarmerie/LTN",
               image_hv: "../../../assets/grades/gendarmerie/LTN_HV",
               image_bv: "../../../assets/grades/gendarmerie/LTN_BV"
             },
             {
               name: "Capitaine",
-              appelation: "Capitaine",
+              appelation: "Mon capitaine ou capitaine (féminin)",
               image: "../../../assets/grades/gendarmerie/CNE",
               image_hv: "../../../assets/grades/gendarmerie/CNE_HV",
               image_bv: "../../../assets/grades/gendarmerie/CNE_BV"
@@ -697,21 +697,21 @@ export class GradesComponent {
           grades: [
             {
               name: "Commandant",
-              appelation: "Commandant",
+              appelation: "Mon commandant ou commandant (féminin)",
               image: "../../../assets/grades/gendarmerie/CDT",
               image_hv: "../../../assets/grades/gendarmerie/CDT_HV",
               image_bv: "../../../assets/grades/gendarmerie/CDT_BV"
             },
             {
               name: "Lieutenant-colonel",
-              appelation: "Lieutenant-colonel",
+              appelation: "Mon colonel ou colonel (féminin)",
               image: "../../../assets/grades/gendarmerie/LCL",
               image_hv: "../../../assets/grades/gendarmerie/LCL_HV",
               image_bv: "../../../assets/grades/gendarmerie/LCL_BV"
             },
             {
               name: "Colonel",
-              appelation: "Colonel",
+              appelation: "Mon colonel ou colonel (féminin)",
               image: "../../../assets/grades/gendarmerie/COL",
               image_hv: "../../../assets/grades/gendarmerie/COL_HV",
               image_bv: "../../../assets/grades/gendarmerie/COL_BV"
@@ -723,28 +723,28 @@ export class GradesComponent {
           grades: [
             {
               name: "Général de brigade",
-              appelation: "Général de brigade",
+              appelation: "Mon général ou général (féminin)",
               image: "../../../assets/grades/gendarmerie/GBI",
               image_hv: "../../../assets/grades/gendarmerie/GBI_HV",
               image_bv: "../../../assets/grades/gendarmerie/GBI_BV"
             },
             {
               name: "Général de division",
-              appelation: "Général de division",
+              appelation: "Mon général ou général (féminin)",
               image: "../../../assets/grades/gendarmerie/GDI",
               image_hv: "../../../assets/grades/gendarmerie/GDI_HV",
               image_bv: "../../../assets/grades/gendarmerie/GDI_BV"
             },
             {
               name: "Général de corps d'armée",
-              appelation: "Général de corps d'armée",
+              appelation: "Mon général ou général (féminin)",
               image: "../../../assets/grades/gendarmerie/GCA",
               image_hv: "../../../assets/grades/gendarmerie/GCA_HV",
               image_bv: "../../../assets/grades/gendarmerie/GCA_BV"
             },
             {
               name: "Général d'armée",
-              appelation: "Général d'armée",
+              appelation: "Mon général ou général (féminin)",
               image: "../../../assets/grades/gendarmerie/GA",
               image_hv: "../../../assets/grades/gendarmerie/GA_HV",
               image_bv: "../../../assets/grades/gendarmerie/GA_BV"
