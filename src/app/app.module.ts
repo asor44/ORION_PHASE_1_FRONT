@@ -1,19 +1,17 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './asor44/header/header.component';
 import { FooterViewComponent } from './asor44/footer/footer-view/footer-view.component';
 import { LoginViewComponent } from './asor44/login/login-view/login-view.component';
 import { ContactComponent } from './asor44/contact/contact.component';
-
 import { RouterModule, Routes } from "@angular/router";
 import { HomePageComponent } from "./asor44/home-page/home-page.component";
 import { DiscoveryDayComponent } from './asor44/discovery-day/discovery-day.component';
 import { OrientationCourseComponent } from './asor44/orientation-course/orientation-course.component';
 import { CisorComponent } from './asor44/cisor/cisor.component';
 import { SingingPageComponent } from './asor44/singing-page/singing-page.component';
-import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { HelpUsComponent } from "./asor44/help-us/help-us.component";
 import { AcadefComponent } from './asor44/acadef/acadef.component';
 import { SafeUrlPipe } from './safe-url.pipe';
@@ -24,7 +22,7 @@ import { ChantierComponent } from './asor44/chantier/chantier.component';
 import { GradesComponent } from './asor44/grades/grades.component';
 import { SoldierCodeComponent } from './asor44/soldier-code/soldier-code.component';
 import { FlagComponent } from './asor44/flag/flag.component';
-import {CeremonialMiliComponent} from "./asor44/ceremonial-mili/ceremonial-mili.component";
+import { CeremonialMiliComponent} from "./asor44/ceremonial-mili/ceremonial-mili.component";
 import { MedalsComponent } from './asor44/medals/medals.component';
 import { InternalReglementComponent } from './asor44/internal-reglement/internal-reglement.component';
 import { HymneComponent } from './asor44/hymne/hymne.component';
@@ -62,6 +60,7 @@ const routes: Routes = [
   { path: 'hymne', component: HymneComponent},
   { path: 'profil', component: ProfilComponent},
   { path: 'articles', component: ItemListComponent},
+  { path: 'cremonial', component: CeremonialMiliComponent},
   { path: '**', redirectTo: '/home' },
 ];
 
