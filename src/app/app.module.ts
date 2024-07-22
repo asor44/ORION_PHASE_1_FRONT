@@ -28,6 +28,7 @@ import { InternalReglementComponent } from './asor44/internal-reglement/internal
 import { HymneComponent } from './asor44/hymne/hymne.component';
 import { ProfilComponent } from './asor44/profil/profil.component';
 import { ItemListComponent } from './asor44/item-list/item-list.component';
+import { StatusComponent } from './asor44/status/status.component';
 
 
 
@@ -60,7 +61,9 @@ const routes: Routes = [
   { path: 'hymne', component: HymneComponent},
   { path: 'profil', component: ProfilComponent},
   { path: 'articles', component: ItemListComponent},
-  { path: 'cremonial', component: CeremonialMiliComponent},
+  { path: 'ceremonial', component: CeremonialMiliComponent},
+  { path: 'status', component: StatusComponent},
+
   { path: '**', redirectTo: '/home' },
 ];
 
@@ -92,6 +95,7 @@ const routes: Routes = [
     HymneComponent,
     ProfilComponent,
     ItemListComponent,
+    StatusComponent,
   ],
   imports: [
     BrowserModule,
