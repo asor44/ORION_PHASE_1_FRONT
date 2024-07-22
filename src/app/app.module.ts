@@ -62,7 +62,7 @@ const routes: Routes = [
   { path: 'profil', component: ProfilComponent},
   { path: 'articles', component: ItemListComponent},
   { path: 'ceremonial', component: CeremonialMiliComponent},
-  { path: 'status', component: StatusComponent},
+  { path: 'statuts', component: StatusComponent},
 
   { path: '**', redirectTo: '/home' },
 ];
