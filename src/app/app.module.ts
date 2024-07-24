@@ -29,6 +29,7 @@ import { HymneComponent } from './asor44/hymne/hymne.component';
 import { ProfilComponent } from './asor44/profil/profil.component';
 import { ItemListComponent } from './asor44/item-list/item-list.component';
 import { StatusComponent } from './asor44/status/status.component';
+import { PorteDrapeauComponent } from './asor44/porte-drapeau/porte-drapeau.component';
 
 
 
@@ -62,6 +63,7 @@ const routes: Routes = [
   { path: 'profil', component: ProfilComponent},
   { path: 'articles', component: ItemListComponent},
   { path: 'ceremonial', component: CeremonialMiliComponent},
+  { path: 'porte-drapeau' , component: PorteDrapeauComponent},
   { path: 'statuts', component: StatusComponent},
 
   { path: '**', redirectTo: '/home' },
@@ -96,6 +98,7 @@ const routes: Routes = [
     ProfilComponent,
     ItemListComponent,
     StatusComponent,
+    PorteDrapeauComponent,
   ],
   imports: [
     BrowserModule,
