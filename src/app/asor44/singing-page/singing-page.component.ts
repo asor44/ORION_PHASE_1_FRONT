@@ -512,6 +512,33 @@ export class SingingPageComponent {
       }
 
     ],
+    "Cadets": [
+      {
+        "nom": "Le Chant des Cadets",
+        "couplets": [
+          {
+            "type": "couplet",
+            "texte": [
+              "Regardez-nous belle jeunesse de France",
+              "Nous defillons fierement",
+              "Nous sommes les cadets de la defense",
+              "La nation comme ralliement",
+            ]
+          },
+          {
+            "type": "refrain",
+            "texte": [
+              "France ho ma France trés belle",
+              "Pour toi je ferais bataille",
+              "Je quitterais père et mère",
+              "Sans espoir de les revoir jamais"
+            ]
+          }
+        ],
+        "url": "https://asor44.fr/wp-content/uploads/2018/02/Le_Chant_des_Cadets.mp3"
+      }
+    ],
+
     "Tradition": [
       {
         "nom": "La Galette",
