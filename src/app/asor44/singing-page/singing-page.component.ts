@@ -16,6 +16,7 @@ export class SingingPageComponent {
     { name: 'Parachutistes' },
     { name: 'Troupes de marine' },
     { name: 'Bivouac' },
+    { name: 'Cadets' },
   ];
 
   get filteredChants() {
