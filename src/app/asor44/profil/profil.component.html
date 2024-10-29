@@ -1,75 +1,71 @@
 <app-header></app-header>
 
 <div class="container mx-auto mt-6 mb-6">
-  <!-- Onglets -->
-  <div class="tabs">
-    <button class="tab-button active" onclick="showTab('equipement')">Équipement</button>
-    <button class="tab-button" onclick="showTab('presence')">Présence/Absence</button>
-    <button class="tab-button" onclick="showTab('demande')">Demande de Matériel</button>
-  </div>
-
-  <!-- Contenu des onglets -->
-  <div id="equipement" class="tab-content active">
-    <h3 class="text-lg leading-6 font-medium text-gray-900">Équipement en Dotation</h3>
-    <p>Liste de l'équipement en dotation.</p>
-    <!-- Ajouter le contenu de l'équipement ici -->
-  </div>
-
-  <div id="presence" class="tab-content">
-    <h3 class="text-lg leading-6 font-medium text-gray-900">Présence et Absence</h3>
-    <p>Justifiez votre absence ou contre-indication :</p>
-    <form>
-      <label for="justification" class="block text-sm font-medium text-gray-700">Ajouter un document :</label>
-      <input type="file" id="justification" class="mt-1 block w-full">
-      <button type="submit" class="mt-4 bg-blue-500 text-white py-2 px-4 rounded">Soumettre</button>
-    </form>
-  </div>
-
-  <div id="demande" class="tab-content">
-    <h3 class="text-lg leading-6 font-medium text-gray-900">Demande de Matériel</h3>
-    <p>Formulaire pour demander du matériel :</p>
-    <form>
-      <label for="material" class="block text-sm font-medium text-gray-700">Matériel souhaité :</label>
-      <input type="text" id="material" class="mt-1 block w-full" placeholder="Type de matériel">
-      <button type="submit" class="mt-4 bg-blue-500 text-white py-2 px-4 rounded">Demander</button>
-    </form>
-  </div>
-
-  <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-4 justify-center mt-6">
+  <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-4 justify-center">
     <!-- Card 1 -->
     <div class="bg-white overflow-hidden shadow rounded-lg border mx-4 box">
       <div class="px-4 py-5 sm:px-6">
         <div class="flex justify-between items-center">
-          <h3 class="text-lg leading-6 font-medium text-gray-900">Profil Détails</h3>
-          <button class="text-sm font-medium text-gray-500">Update</button>
+          <h3 class="text-lg leading-6 font-medium text-gray-900">
+            Profil Détails
+          </h3>
+          <button class="text-sm font-medium text-gray-500">
+            Update
+          </button>
         </div>
-        <p class="mt-1 max-w-2xl text-sm text-gray-500">Les coordonnées sont fournies ci-dessous.</p>
+        <p class="mt-1 max-w-2xl text-sm text-gray-500">
+          Les coordonnées sont fournies ci-dessous.
+        </p>
       </div>
       <div class="border-t border-gray-200 px-4 py-5 sm:p-0">
         <dl class="sm:divide-y sm:divide-gray-200">
           <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-            <dt class="text-sm font-medium text-gray-500">Nom</dt>
-            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">John Doe</dd>
+            <dt class="text-sm font-medium text-gray-500">
+              Nom
+            </dt>
+            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+              John Doe
+            </dd>
           </div>
           <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-            <dt class="text-sm font-medium text-gray-500">Prénom</dt>
-            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">John Doe</dd>
+            <dt class="text-sm font-medium text-gray-500">
+              Prénom
+            </dt>
+            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+              John Doe
+            </dd>
           </div>
           <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-            <dt class="text-sm font-medium text-gray-500">Email address</dt>
-            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">johndoe@example.com</dd>
+            <dt class="text-sm font-medium text-gray-500">
+              Email address
+            </dt>
+            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+              johndoe@example.com
+            </dd>
           </div>
           <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-            <dt class="text-sm font-medium text-gray-500">Numéro de Téléphone</dt>
-            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">(123) 456-7890</dd>
+            <dt class="text-sm font-medium text-gray-500">
+              Numéro de Téléphone
+            </dt>
+            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+              (123) 456-7890
+            </dd>
           </div>
           <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-            <dt class="text-sm font-medium text-gray-500">Code postal</dt>
-            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">35000</dd>
+            <dt class="text-sm font-medium text-gray-500">
+              Code postal
+            </dt>
+            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+              35000
+            </dd>
           </div>
           <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-            <dt class="text-sm font-medium text-gray-500">Pays</dt>
-            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">Maroc</dd>
+            <dt class="text-sm font-medium text-gray-500">
+              Pays
+            </dt>
+            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+              Maroc
+            </dd>
           </div>
         </dl>
       </div>
@@ -79,51 +75,113 @@
     <div class="bg-white overflow-hidden shadow rounded-lg border mx-4 box">
       <div class="px-4 py-5 sm:px-6">
         <div class="flex justify-between items-center">
-          <h3 class="text-lg leading-6 font-medium text-gray-900">Détails Asor44</h3>
-          <button class="text-sm font-medium text-gray-500">Update</button>
+          <h3 class="text-lg leading-6 font-medium text-gray-900">
+            Détails Asor44
+          </h3>
+          <button class="text-sm font-medium text-gray-500">
+            Update
+          </button>
         </div>
-        <p class="mt-1 max-w-2xl text-sm text-gray-500">Les coordonnées sont fournies ci-dessous.</p>
+        <p class="mt-1 max-w-2xl text-sm text-gray-500">
+          Les coordonnées sont fournies ci-dessous.
+        </p>
       </div>
       <div class="border-t border-gray-200 px-4 py-5 sm:p-0">
         <dl class="sm:divide-y sm:divide-gray-200">
           <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-            <dt class="text-sm font-medium text-gray-500">Grade</dt>
-            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">Mon capitaine</dd>
+            <dt class="text-sm font-medium text-gray-500">
+              Grade
+            </dt>
+            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+              Mon capitaine
+            </dd>
           </div>
           <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-            <dt class="text-sm font-medium text-gray-500">Cotisation</dt>
-            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">Oui</dd>
+            <dt class="text-sm font-medium text-gray-500">
+              Cotisation
+            </dt>
+            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+              Oui
+            </dd>
           </div>
           <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-            <dt class="text-sm font-medium text-gray-500">Membre</dt>
-            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">Président</dd>
+            <dt class="text-sm font-medium text-gray-500">
+              Membre
+            </dt>
+            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+              Président
+            </dd>
           </div>
           <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-            <dt class="text-sm font-medium text-gray-500">NID</dt>
-            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">56787654567U76567</dd>
+            <dt class="text-sm font-medium text-gray-500">
+              NID
+            </dt>
+            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+              56787654567U76567
+            </dd>
           </div>
           <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-            <dt class="text-sm font-medium text-gray-500">Réserve</dt>
-            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">oui</dd>
+            <dt class="text-sm font-medium text-gray-500">
+              Réserve
+            </dt>
+            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+              oui
+            </dd>
           </div>
           <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-            <dt class="text-sm font-medium text-gray-500">Armées</dt>
-            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">Terre</dd>
+            <dt class="text-sm font-medium text-gray-500">
+              Armées
+            </dt>
+            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+              Terre
+            </dd>
           </div>
         </dl>
       </div>
     </div>
+    <!-- Card 3 -->
+    <div class="bg-white overflow-hidden shadow rounded-lg border mx-4 box">
+      <div class="px-4 py-5 sm:px-6">
+        <div class="flex justify-between items-center">
+          <h3 class="text-lg leading-6 font-medium text-gray-900">
+            Dotation
+          </h3>
+          <button class="text-sm font-medium text-gray-500">
+            Update
+          </button>
+          <p class="mt-1 max-w-2xl text-sm text-gray-500">
+            Liste du matériel fourni actuellement en dotation.
+          </p>
+    <!-- Card 4 -->
+    <div class="bg-white overflow-hidden shadow rounded-lg border mx-4 box">
+      <div class="px-4 py-5 sm:px-6">
+        <div class="flex justify-between items-center">
+          <h3 class="text-lg leading-6 font-medium text-gray-900">
+            Présence
+          </h3>
+          <button class="text-sm font-medium text-gray-500">
+            Justifier une absence
+          </button>
+          <button class="text-sm font-medium text-gray-500">
+            Transmettre une contre-indication au sport
+          </button>
+          <p class="mt-1 max-w-2xl text-sm text-gray-500">
+            Calendrier des présences et absences.
+          </p>
+    <!-- Card 5 --> 
+    <div class="bg-white overflow-hidden shadow rounded-lg border mx-4 box">
+      <div class="px-4 py-5 sm:px-6">
+        <div class="flex justify-between items-center">
+          <h3 class="text-lg leading-6 font-medium text-gray-900">
+            Demande
+          </h3>
+          <button class="text-sm font-medium text-gray-500">
+            Envoyer la demande
+          </button>
+          <p class="mt-1 max-w-2xl text-sm text-gray-500">
+            Demander du materiel
+          </p>
   </div>
 </div>
 
 <app-footer-view></app-footer-view>
-
-<script>
-  function showTab(tabId) {
-    const tabs = document.querySelectorAll('.tab-content');
-    const buttons = document.querySelectorAll('.tab-button');
-
-    tabs.forEach(tab => {
-      tab.classList.remove('active');
-    });
-  }
