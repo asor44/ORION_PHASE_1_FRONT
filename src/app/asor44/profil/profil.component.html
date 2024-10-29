@@ -24,7 +24,7 @@
               Nom
             </dt>
             <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-              John Doe
+              Doe
             </dd>
           </div>
           <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
@@ -32,7 +32,7 @@
               Prénom
             </dt>
             <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-              John Doe
+              John
             </dd>
           </div>
           <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
@@ -48,7 +48,7 @@
               Numéro de Téléphone
             </dt>
             <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-              (123) 456-7890
+              (+33) 6 12 34 56 78
             </dd>
           </div>
           <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
@@ -58,13 +58,31 @@
             <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
               35000
             </dd>
+            <dt class="text-sm font-medium text-gray-500">
+              ville
+            </dt>
+            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+              Rennes
+            </dd>
           </div>
           <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
             <dt class="text-sm font-medium text-gray-500">
               Pays
             </dt>
             <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-              Maroc
+              France
+            </dd>
+            <dt class="text-sm font-medium text-gray-500">
+              Identifiant
+            </dt>
+            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+              kevin.andrey@asor44.fr
+            </dd>
+            <dt class="text-sm font-medium text-gray-500">
+              Mot de passe
+            </dt>
+            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+              ********
             </dd>
           </div>
         </dl>
@@ -93,7 +111,7 @@
               Grade
             </dt>
             <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-              Mon capitaine
+              Capitaine
             </dd>
           </div>
           <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
@@ -101,7 +119,7 @@
               Cotisation
             </dt>
             <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-              Oui
+              01/01/2024
             </dd>
           </div>
           <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
@@ -117,7 +135,7 @@
               NID
             </dt>
             <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-              56787654567U76567
+              1544040270
             </dd>
           </div>
           <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
@@ -141,6 +159,17 @@
     </div>
 
 
+    <script>
+      const userType = 'cadet' || 'cadre' || 'parents';
+      if (userType != 'cadet' || userType != 'cadre' || userType != 'parents') {
+        // Hide Card 3 / 4 / 5
+        document.querySelector('.box:nth-child(3)').style.display = 'none';
+        document.querySelector('.box:nth-child(4)').style.display = 'none';
+        document.querySelector('.box:nth-child(5)').style.display = 'none';
+      }
+    </script>
+
+
     <!-- Card 3 -->
     <div class="bg-white overflow-hidden shadow rounded-lg border mx-4 box">
       <div class="px-4 py-5 sm:px-6">
@@ -155,8 +184,65 @@
             Liste du matériel fourni actuellement en dotation.
           </p>
         </div>
+        <div class="px-4 py-4">
+          <table class="min-w-full border border-gray-200 divide-y divide-gray-200">
+            <thead class="bg-gray-50">
+              <tr>
+                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  photo
+                </th>
+                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  Nom du matériel
+                </th>
+                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  Quantité
+                </th>
+                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  Date de perception
+                </th>
+                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  Date de réintégration
+                </th>
+              </tr>
+            </thead>
+            <tbody class="bg-white divide-y divide-gray-200">
+              <!-- Exemple de ligne de données -->
+              <tr>
+                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                  <img src="https://www.cgsurplus.fr/img/img_upload/722251018_90928.jpg" alt="photo" class="h-10 w-10 rounded-full" />
+                </td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                  Sac coyotte 45L
+                </td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                  1
+                </td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                  23/10/2024
+                </td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                  
+                </td>
+              </tr>
+              <tr>
+                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                  Pantalon TNG CE
+                </td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                  1
+                </td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                  23/10/2024
+                </td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                  
+                </td>
+              </tr>
+              <!-- Autres lignes de données -->
+            </tbody>
+          </table>
+        </div>
       </div>
-    </div>
 
 
     <!-- Card 4 -->
