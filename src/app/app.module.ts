@@ -32,6 +32,7 @@ import { StatusComponent } from './asor44/status/status.component';
 import { PorteDrapeauComponent } from './asor44/porte-drapeau/porte-drapeau.component';
 import { ArticleCreationComponent } from './asor44/article-creation/article-creation.component';
 import { ArticleViewComponent } from './asor44/article-view/article-view.component';
+import { CodeCadetComponent } from './asor44/code-cadet/code-cadet.component';
 
 
 /***
@@ -66,6 +67,7 @@ const routes: Routes = [
   { path: 'ceremonial', component: CeremonialMiliComponent},
   { path: 'porte-drapeau' , component: PorteDrapeauComponent},
   { path: 'statuts', component: StatusComponent},
+  { path: 'CodeCadet', component: CodeCadetComponent},
 
   { path: '**', redirectTo: '/home' },
 ];
@@ -102,6 +104,7 @@ const routes: Routes = [
     PorteDrapeauComponent,
     ArticleCreationComponent,
     ArticleViewComponent,
+    CodeCadetComponent,
   ],
   imports: [
     BrowserModule,
