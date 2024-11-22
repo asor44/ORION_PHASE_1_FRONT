@@ -33,6 +33,10 @@ import { PorteDrapeauComponent } from './asor44/porte-drapeau/porte-drapeau.comp
 import { ArticleCreationComponent } from './asor44/article-creation/article-creation.component';
 import { ArticleViewComponent } from './asor44/article-view/article-view.component';
 import { CodeCadetComponent } from './asor44/code-cadet/code-cadet.component';
+import { CguComponent } from './asor44/cgu/cgu.component';
+import { TcComponent } from './asor44/tc/tc.component';
+import { ConfidentialityComponent } from './asor44/confidentiality/confidentiality.component';
+import { AdminComponent } from './asor44/admin/admin.component';
 
 
 /***
@@ -53,7 +57,6 @@ const routes: Routes = [
   { path: 'contact', component: ContactComponent },
   { path: 'object', component: ObjectComponent },
   { path: 'grades', component: GradesComponent },
-  { path: 'chantier', component: ChantierComponent },
   { path: 'soldierCode', component: SoldierCodeComponent },
   { path: 'flag', component: FlagComponent },
   { path: 'ceremonial', component: CeremonialMiliComponent },
@@ -68,8 +71,10 @@ const routes: Routes = [
   { path: 'porte-drapeau' , component: PorteDrapeauComponent},
   { path: 'statuts', component: StatusComponent},
   { path: 'CodeCadet', component: CodeCadetComponent},
+  { path: 'cgu', component: CguComponent},
+  { path: 'admin', component: AdminComponent},
 
-  { path: '**', redirectTo: '/home' },
+  { path: '**', component: ChantierComponent },
 ];
 
 @NgModule({
@@ -105,6 +110,10 @@ const routes: Routes = [
     ArticleCreationComponent,
     ArticleViewComponent,
     CodeCadetComponent,
+    CguComponent,
+    TcComponent,
+    ConfidentialityComponent,
+    AdminComponent,
   ],
   imports: [
     BrowserModule,
