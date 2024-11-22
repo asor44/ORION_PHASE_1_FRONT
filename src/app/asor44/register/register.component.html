@@ -10,54 +10,163 @@
   </div>
 
   <div class="lg:p-36 md:p-52 sm:20 p-8 w-1/2 lg:w-1/2">
-    <h1 class="text-2xl font-semibold mb-4">Enregistrement</h1>
-    <form action="#" method="POST">
+    <div class="bg-white flex justify-center items-center h-screen">
+      <!-- Form Container -->
+      <div class="lg:p-36 md:p-52 sm:20 p-8 w-full lg:w-1/2">
+        <h1 class="text-2xl font-semibold mb-4">Enregistrement</h1>
 
-      <!-- Name Input -->
-      <div class="mb-4">
-        <label for="name" class="block text-gray-600">Nom</label>
-        <input type="text" id="name" name="name"
-          class="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500"
-          autocomplete="off">
-      </div>
+        <!-- Étape 1 -->
+        <div
+          [class.hidden]="step !== 1"
+          [class.opacity-0]="step !== 1"
+          class="transition-opacity duration-500"
+        >
+          <form (ngSubmit)="nextStep()">
+            <div class="mb-4">
+              <label for="name" class="block text-gray-600">Nom</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                [(ngModel)]="form.lastName"
+                required
+                class="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500"
+              />
+            </div>
+            <div class="mb-4">
+              <label for="prenom" class="block text-gray-600">Prénom</label>
+              <input
+                type="text"
+                id="prenom"
+                name="prenom"
+                [(ngModel)]="form.firstName"
+                required
+                class="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500"
+              />
+            </div>
+            <div class="mb-4">
+              <label for="age" class="block text-gray-600">Date de naissance</label>
+              <input
+                type="date"
+                id="age"
+                name="age"
+                [(ngModel)]="form.birthdate"
+                required
+                class="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500"
+              />
+            </div>
+            <div class="mb-4">
+              <label for="email" class="block text-gray-600">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                [(ngModel)]="form.email"
+                required
+                class="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500"
+              />
+            </div>
+            <div class="mb-4">
+              <label for="password" class="block text-gray-600">Mot de passe</label>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                [(ngModel)]="form.password"
+                required
+                class="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500"
+              />
+            </div>
+            <button
+              type="button"
+              (click)="nextStep()"
+              class="bg-black hover:text-blueGray-300 text-white font-semibold rounded-md py-2 px-4 w-full"
+            >
+              Suivant
+            </button>
+          </form>
+        </div>
 
-      <!-- First name Input -->
-      <div class="mb-4">
-        <label for="prenom" class="block text-gray-600">Prénom</label>
-        <input type="text" id="prenom" name="prenom"
-          class="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500"
-          autocomplete="off">
+        <!-- Étape 2 -->
+        <div
+          [class.hidden]="step !== 2"
+          [class.opacity-0]="step !== 2"
+          class="transition-opacity duration-500"
+        >
+          <form (ngSubmit)="submitForm()">
+            <div class="mb-4">
+              <label for="address" class="block text-gray-600">Adresse</label>
+              <input
+                type="text"
+                id="address"
+                name="address"
+                [(ngModel)]="form.address"
+                required
+                class="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500"
+              />
+            </div>
+            <div class="mb-4">
+              <label for="postalCode" class="block text-gray-600">Code postal</label>
+              <input
+                type="text"
+                id="postalCode"
+                name="postalCode"
+                [(ngModel)]="form.postalCode"
+                required
+                class="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500"
+              />
+            </div>
+            <div class="mb-4">
+              <label for="city" class="block text-gray-600">Ville</label>
+              <input
+                type="text"
+                id="city"
+                name="city"
+                [(ngModel)]="form.city"
+                required
+                class="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500"
+              />
+            </div>
+            <div class="mb-4">
+              <label for="country" class="block text-gray-600">Pays</label>
+              <input
+                type="text"
+                id="country"
+                name="country"
+                [(ngModel)]="form.country"
+                required
+                class="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500"
+              />
+            </div>
+            <div class="mb-4">
+              <label for="phone" class="block text-gray-600">Téléphone</label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                [(ngModel)]="form.phone"
+                required
+                class="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500"
+              />
+            </div>
+            <div class="flex justify-between">
+              <button
+                type="button"
+                (click)="previousStep()"
+                class="bg-gray-300 hover:bg-gray-400 text-black font-semibold rounded-md py-2 px-4"
+              >
+                Précédent
+              </button>
+              <button
+                type="submit"
+                class="bg-black hover:text-blueGray-300 text-white font-semibold rounded-md py-2 px-4"
+              >
+                S'enregistrer
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
-
-      <!-- Age Input -->
-      <div class="mb-4">
-        <label for="age" class="block text-gray-600">Date de naissance</label>
-        <input type="date" id="age" name="age"
-          class="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500"
-          autocomplete="off">
-      </div>
-
-      <!-- Email Input -->
-      <div class="mb-4">
-        <label for="email" class="block text-gray-600">Email</label>
-        <input type="email" id="email" name="email"
-          class="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500"
-          autocomplete="off">
-      </div>
-      <!-- Password Input -->
-      <div class="mb-4">
-        <label for="password" class="block text-gray-600">Mot de passe</label>
-        <input type="password" id="password" name="password"
-          class="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500"
-          autocomplete="off">
-      </div>
-      <!-- Register Button -->
-      <button type="submit"
-        class="bg-black hover:text-blueGray-300 text-white font-semibold rounded-md py-2 px-4 w-full">S'enregistrer</button>
-    </form>
-    <!-- Sign up  Link -->
-    <div class="mt-6 text-blue-500 text-center">
-      <a href="/login" class="hover:underline">Connexion</a>
     </div>
   </div>
 </div>
