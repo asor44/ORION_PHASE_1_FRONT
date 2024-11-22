@@ -7,4 +7,5 @@
 /dataSources/
 /dataSources.local.xml
 # Fichier de config Azure
-/staticwebapp.config.json
+/staticwebapp.config.json# GitHub Copilot persisted chat sessions
+/copilot/chatSessions

@@ -30,9 +30,8 @@ import { ProfilComponent } from './asor44/profil/profil.component';
 import { ItemListComponent } from './asor44/item-list/item-list.component';
 import { StatusComponent } from './asor44/status/status.component';
 import { PorteDrapeauComponent } from './asor44/porte-drapeau/porte-drapeau.component';
-
-
-
+import { ArticleCreationComponent } from './asor44/article-creation/article-creation.component';
+import { ArticleViewComponent } from './asor44/article-view/article-view.component';
 
 
 /***
@@ -61,6 +60,8 @@ const routes: Routes = [
   { path: 'internal_rules', component: InternalReglementComponent},
   { path: 'hymne', component: HymneComponent},
   { path: 'profil', component: ProfilComponent},
+  { path: 'article-creation', component: ArticleCreationComponent},
+  { path: 'article-view/:name', component: ArticleViewComponent},
   { path: 'articles', component: ItemListComponent},
   { path: 'ceremonial', component: CeremonialMiliComponent},
   { path: 'porte-drapeau' , component: PorteDrapeauComponent},
@@ -99,6 +100,8 @@ const routes: Routes = [
     ItemListComponent,
     StatusComponent,
     PorteDrapeauComponent,
+    ArticleCreationComponent,
+    ArticleViewComponent,
   ],
   imports: [
     BrowserModule,
