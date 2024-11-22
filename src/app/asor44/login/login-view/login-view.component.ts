@@ -21,7 +21,7 @@ export class LoginViewComponent {
       const request = await this.authService.signIn(this.user);
       if (request.status === 201  ) {
         localStorage.setItem('token', request.data.token);
-        await this.router.navigate(['/home']);
+        await this.router.navigate(['/profil']);
       }
     } catch (e) {
       console.error(e);
