@@ -11,7 +11,7 @@ import { DiscoveryDayComponent } from './asor44/discovery-day/discovery-day.comp
 import { OrientationCourseComponent } from './asor44/orientation-course/orientation-course.component';
 import { CisorComponent } from './asor44/cisor/cisor.component';
 import { SingingPageComponent } from './asor44/singing-page/singing-page.component';
-import { FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { HelpUsComponent } from "./asor44/help-us/help-us.component";
 import { AcadefComponent } from './asor44/acadef/acadef.component';
 import { SafeUrlPipe } from './safe-url.pipe';
@@ -22,7 +22,7 @@ import { ChantierComponent } from './asor44/chantier/chantier.component';
 import { GradesComponent } from './asor44/grades/grades.component';
 import { SoldierCodeComponent } from './asor44/soldier-code/soldier-code.component';
 import { FlagComponent } from './asor44/flag/flag.component';
-import { CeremonialMiliComponent} from "./asor44/ceremonial-mili/ceremonial-mili.component";
+import { CeremonialMiliComponent } from "./asor44/ceremonial-mili/ceremonial-mili.component";
 import { MedalsComponent } from './asor44/medals/medals.component';
 import { InternalReglementComponent } from './asor44/internal-reglement/internal-reglement.component';
 import { HymneComponent } from './asor44/hymne/hymne.component';
@@ -37,6 +37,7 @@ import { CguComponent } from './asor44/cgu/cgu.component';
 import { TcComponent } from './asor44/tc/tc.component';
 import { ConfidentialityComponent } from './asor44/confidentiality/confidentiality.component';
 import { AdminComponent } from './asor44/admin/admin.component';
+import { PartnersComponent } from './asor44/partners/partners.component';
 
 
 /***
@@ -60,19 +61,20 @@ const routes: Routes = [
   { path: 'soldierCode', component: SoldierCodeComponent },
   { path: 'flag', component: FlagComponent },
   { path: 'ceremonial', component: CeremonialMiliComponent },
-  { path: 'medals', component: MedalsComponent},
-  { path: 'internal_rules', component: InternalReglementComponent},
-  { path: 'hymne', component: HymneComponent},
-  { path: 'profil', component: ProfilComponent},
-  { path: 'article-creation', component: ArticleCreationComponent},
-  { path: 'article-view/:name', component: ArticleViewComponent},
-  { path: 'articles', component: ItemListComponent},
-  { path: 'ceremonial', component: CeremonialMiliComponent},
-  { path: 'porte-drapeau' , component: PorteDrapeauComponent},
-  { path: 'statuts', component: StatusComponent},
-  { path: 'CodeCadet', component: CodeCadetComponent},
-  { path: 'cgu', component: CguComponent},
-  { path: 'admin', component: AdminComponent},
+  { path: 'medals', component: MedalsComponent },
+  { path: 'internal_rules', component: InternalReglementComponent },
+  { path: 'hymne', component: HymneComponent },
+  { path: 'profil', component: ProfilComponent },
+  { path: 'article-creation', component: ArticleCreationComponent },
+  { path: 'article-view/:name', component: ArticleViewComponent },
+  { path: 'articles', component: ItemListComponent },
+  { path: 'ceremonial', component: CeremonialMiliComponent },
+  { path: 'porte-drapeau', component: PorteDrapeauComponent },
+  { path: 'statuts', component: StatusComponent },
+  { path: 'CodeCadet', component: CodeCadetComponent },
+  { path: 'cgu', component: CguComponent },
+  { path: 'admin', component: AdminComponent },
+  { path: 'partners', component: PartnersComponent },
 
   { path: '**', component: ChantierComponent },
 ];
@@ -114,6 +116,7 @@ const routes: Routes = [
     TcComponent,
     ConfidentialityComponent,
     AdminComponent,
+    PartnersComponent,
   ],
   imports: [
     BrowserModule,
