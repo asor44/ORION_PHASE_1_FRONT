@@ -8939,8 +8939,7 @@ export class SingingPageComponent {
               "Et la langue !! (danser comme un tordu la langue sortie…)"
             ]
           }
-        ],
-        "url": "https://asor44.fr/wp-content/uploads/2018/04/Le_pere_abrahams.mp3"
+        ]
       },
       {
         "nom": "LE PERE BACCHUS",
