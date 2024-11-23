@@ -264,9 +264,10 @@
           </a>
         </li> -->
         <li>
-          <a :href="isLoggedIn ? '/user-panel' : '/login'">
-            <img :src="isLoggedIn ? '../../../assets/log_fond_remove.png' : '../../../assets/logo_connection.png'"
-              :alt="isLoggedIn ? 'Logo utilisateur connecté' : 'Logo de connexion'" class="w-12 h-12">
+        <li>
+          <a [href]="isLoggedIn ? '/user-panel' : '/login'">
+            <img [src]="isLoggedIn ? '../../../assets/log_fond_remove.png' : '../../../assets/logo_connection.png'"
+              [alt]="isLoggedIn ? 'Logo utilisateur connecté' : 'Logo de connexion'" class="w-12 h-10">
           </a>
         </li>
       </ul>
@@ -274,19 +275,6 @@
   </nav>
   <div class="drapeau-francais h-2 w-full"></div>
 </header>
-
-<script lang="ts">
-  import { defineComponent, ref } from 'vue';
-
-  export default defineComponent({
-    name: 'LoginLink',
-    setup() {
-      const isLoggedIn = ref(false);
-
-      return { isLoggedIn };
-    },
-  });
-</script>
 
 <style>
   .drapeau-francais {
