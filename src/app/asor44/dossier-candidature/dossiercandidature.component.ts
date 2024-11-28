@@ -1,9 +1,12 @@
 import { Component } from '@angular/core';
+import { AppModule } from 'src/app/app.module';
 
 @Component({
   selector: 'app-dossiercandidature',
   templateUrl: './dossiercandidature.component.html',
-  styleUrls: ['./dossiercandidature.component.scss']
+  styleUrls: ['./dossiercandidature.component.scss'],
+  standalone:  true,
+  imports: [AppModule]
 })
 export class dossiercandidatureComponent {
   currentVideoIndex = 0;
