@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component, inject} from '@angular/core';
+import {ArticleService} from "../services/article.service";
 
 
 @Component({
@@ -12,6 +13,7 @@ export class ArticleCreationComponent {
   videoUrl: string = '';
   images: string[] = [];
   texts: { content: string, images: string[] }[] = [{ content: 'Premier texte de l\'article', images: [] }];
+  articleService = inject(ArticleService);
 
   addTextBlock() {
     this.texts.push({ content: '', images: [] });
@@ -80,5 +82,16 @@ export class ArticleCreationComponent {
 
   removeTextBlock(i: number) {
     this.texts.splice(i, 1);
+  }
+
+  async createArticle() {
+    const request = await this.articleService.createArticle({
+      title: this.articleTitle,
+      content: this.texts,
+      images: this.images
+    });
+    if(request.status === 201) {
+      console.log('Article créé avec succès !');
+    }
   }
 }
