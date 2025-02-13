@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-code-cadet',
-  templateUrl: './code-cadet.component.html',
-  styleUrls: ['./code-cadet.component.scss']
+    selector: 'app-code-cadet',
+    templateUrl: './code-cadet.component.html',
+    styleUrls: ['./code-cadet.component.scss'],
+    standalone: false
 })
 export class CodeCadetComponent {
   currentVideoIndex = 0;

@@ -23,9 +23,10 @@ type Armee = {
 };
 
 @Component({
-  selector: 'app-grades',
-  templateUrl: './grades.component.html',
-  styleUrls: ['./grades.component.scss']
+    selector: 'app-grades',
+    templateUrl: './grades.component.html',
+    styleUrls: ['./grades.component.scss'],
+    standalone: false
 })
 
 export class GradesComponent {

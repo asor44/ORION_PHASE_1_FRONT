@@ -3,9 +3,10 @@ import {AuthService} from "../../services/auth.service";
 import {Router} from "@angular/router";
 
 @Component({
-  selector: 'app-login-view',
-  templateUrl: './login-view.component.html',
-  styleUrls: ['./login-view.component.scss']
+    selector: 'app-login-view',
+    templateUrl: './login-view.component.html',
+    styleUrls: ['./login-view.component.scss'],
+    standalone: false
 })
 export class LoginViewComponent {
   user = {

@@ -3,9 +3,10 @@ import {ArticleService} from "../services/article.service";
 
 
 @Component({
-  selector: 'app-article-creation',
-  templateUrl: './article-creation.component.html',
-  styleUrls: ['./article-creation.component.scss']
+    selector: 'app-article-creation',
+    templateUrl: './article-creation.component.html',
+    styleUrls: ['./article-creation.component.scss'],
+    standalone: false
 })
 export class ArticleCreationComponent {
   articleTitle: string = "";

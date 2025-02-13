@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-acadef',
-  templateUrl: './acadef.component.html',
-  styleUrls: ['./acadef.component.scss']
+    selector: 'app-acadef',
+    templateUrl: './acadef.component.html',
+    styleUrls: ['./acadef.component.scss'],
+    standalone: false
 })
 export class AcadefComponent {
   currentVideoIndex = 0;

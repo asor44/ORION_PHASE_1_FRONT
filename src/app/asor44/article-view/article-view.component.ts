@@ -3,9 +3,10 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {ArticleService} from "../services/article.service";
 
 @Component({
-  selector: 'app-article-view',
-  templateUrl: './article-view.component.html',
-  styleUrls: ['./article-view.component.scss']
+    selector: 'app-article-view',
+    templateUrl: './article-view.component.html',
+    styleUrls: ['./article-view.component.scss'],
+    standalone: false
 })
 export class ArticleViewComponent implements OnInit {
   name: string = '';
