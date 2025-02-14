@@ -3,11 +3,11 @@ name: Deploy Orion Front to Azure Static Web Apps
 on:
   push:
     branches:
-      - dev  # Modifie cette branche si nécessaire
+      - DEV  # Modifie cette branche si nécessaire
   pull_request:
     types: [opened, synchronize, reopened]
     branches:
-      - dev
+      - DEV
 
 jobs:
   build_and_deploy:
