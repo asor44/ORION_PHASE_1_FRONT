@@ -1,6 +1,6 @@
 export const environment = {
   production: true,
-  apiUrl: 'http://localhost:3000',
+  apiUrl: 'https://asor44api.azurewebsites.net',
   apiVersion: 'v1',
   apiPath: 'api',
 };
