@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { MaterialService } from "../services/material.service";
+import { UserService } from "../services/user.service";
 
 @Component({
     selector: 'app-profile',
@@ -9,53 +11,50 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 })
 export class ProfilComponent implements OnInit {
   profilForm: FormGroup | undefined;
-  profilFields = [
-    { name: 'nom', label: 'Nom' },
-    { name: 'prenom', label: 'Prénom' },
-    { name: 'dateNaissance', label: 'Date de naissance' },
-    { name: 'adresse', label: 'Adresse' },
-    { name: 'ville', label: 'Ville' },
-    { name: 'codePostal', label: 'Code postal' },
-    { name: 'pays', label: 'Pays' },
-    { name: 'nid', label: 'NID' },
-    { name: 'reserve', label: 'Réserve', isBoolean: true },
-    { name: 'armees', label: 'Armées', isSelect: true, options: ['Terre', 'Marine', 'Air', 'Gendarmerie'] },
-    { name: 'grade', label: 'Grade' },
-    { name: 'cotisation', label: 'Cotisation', isBoolean: true },
-    { name: 'membre', label: 'Membre', isBoolean: true },
-    { name: 'poste', label: 'Poste' },
-    { name: 'tel', label: 'Téléphone' },
-    { name: 'mail', label: 'E-mail' },
-    { name: 'mdp', label: 'Mot de passe' }
-  ];
+  materials: any[] = []
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private materialService: MaterialService, private userService: UserService) { }
 
-  ngOnInit(): void {
+  async ngOnInit(): Promise<void> {
     this.profilForm = this.fb.group({
-      nom: [''],
-      prenom: [''],
-      dateNaissance: [''],
-      adresse: [''],
-      ville: [''],
-      codePostal: [''],
-      pays: [''],
+      lastname: [''],
+      firstname: [''],
+      birthdate: [''],
+      address: [''],
+      city: [''],
+      postalCode: [''],
+      country: [''],
       nid: [''],
       reserve: [false],
-      armees: [''],
+      army: [''],
       grade: [''],
       cotisation: [false],
-      membre: [false],
+      member: [false],
       poste: [''],
-      tel: [''],
-      mail: [''],
-      mdp: ['']
+      phonenumber: [''],
+      email: [''],
+      password: ['']
     });
+
+    this.materials = this.materialService.getAllMaterials()
+    const requestProfile: any = await this.userService.me();
+    console.log("requestProfile", requestProfile.status);
+    if (requestProfile.status === 200) {
+      console.log("Profile not found");
+      this.profilForm.patchValue(requestProfile.data);
+      console.log("Profile found", requestProfile.data);
+    }
+  }
+
+  getValueOfField(fieldName: string) {
+    if(!this.profilForm) return;
+    return this.profilForm.get(fieldName)?.value;
   }
 
   onSubmit() {
-    // @ts-ignore
-    console.log(this.profilForm.value);
+    if (this.profilForm) {
+      console.log(this.profilForm.value);
+    }
     // ici vous pouvez ajouter le code pour traiter le formulaire, par exemple l'envoyer à un serveur
   }
 }

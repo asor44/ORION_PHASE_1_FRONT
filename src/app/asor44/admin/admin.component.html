@@ -19,14 +19,6 @@
         Utilisateurs
       </button>
       <button
-        (click)="setActiveTab('gestion-contenu')"
-        class="flex items-center px-4 py-2 text-gray-600 hover:bg-blue-100 hover:text-blue-600 transition"
-        [class.bg-blue-100]="activeTab === 'gestion-contenu'"
-        [class.text-blue-600]="activeTab === 'gestion-contenu'">
-        <i class="fas fa-cogs mr-3"></i>
-        Gestion du contenu
-      </button>
-      <button
         (click)="setActiveTab('articles')"
         class="flex items-center px-4 py-2 text-gray-600 hover:bg-blue-100 hover:text-blue-600 transition"
         [class.bg-blue-100]="activeTab === 'articles'"
@@ -63,13 +55,62 @@
             </tr>
             </thead>
             <tbody>
-            <tr *ngFor="let user of filteredUsers" class="hover:bg-gray-50">
-              <td class="p-3 text-gray-800">{{ user.name }}</td>
-              <td class="p-3 text-gray-800">{{ user.email }}</td>
-              <td class="p-3 text-gray-800">{{ user.role }}</td>
+              <tr *ngIf="filteredUsers.length === 0">
+                <td colspan="4" class="p-3 text-center text-gray-500">Aucun utilisateur trouvé.</td>
+              </tr>
+              <tr *ngFor="let user of filteredUsers" class="hover:bg-gray-50">
+                <td class="p-3 text-gray-800">{{ reformatName('firstname', user.firstname) }} {{ reformatName('lastname', user.lastname) }}</td>
+                <td class="p-3 text-gray-800">{{ user.email }}</td>
+                <td class="p-3 text-gray-800">{{ user.role }}</td>
+                <td class="p-3 text-right">
+                  <button
+                    (click)="openModal(user)"
+                    class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition">
+                    Afficher
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div *ngIf="activeTab === 'articles'" id="articles">
+        <h2 class="text-2xl font-bold text-gray-800 mb-4">Articles</h2>
+
+        <!-- Barre de recherche -->
+        <div class="mb-4">
+          <input
+            type="text"
+            placeholder="Rechercher un article par nom ..."
+            [(ngModel)]="searchTerm"
+            class="w-full p-2 border border-gray-300 rounded shadow-sm focus:outline-none focus:ring focus:ring-blue-300"
+          />
+        </div>
+
+        <!-- Tableau -->
+        <div class="overflow-x-auto">
+          <table class="min-w-full bg-white border border-gray-200 rounded shadow-sm">
+            <thead class="bg-gray-100 border-b">
+            <tr>
+              <th class="text-left p-3 text-gray-600 font-semibold">Nom</th>
+              <th class="text-left p-3 text-gray-600 font-semibold">Approuvé</th>
+              <th class="text-left p-3 text-gray-600 font-semibold">Visible</th>
+              <th class="text-left p-3 text-gray-600 font-semibold">Auteur</th>
+              <th class="p-3"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngIf="filteredArticles.length === 0">
+              <td colspan="4" class="p-3 text-center text-gray-500">Aucun article trouvé.</td>
+            </tr>
+            <tr *ngFor="let article of filteredArticles" class="hover:bg-gray-50">
+              <td class="p-3 text-gray-800">{{ article.title }}</td>
+              <td class="p-3 text-gray-800">{{ article.isApproved ? 'Oui' : 'Non' }}</td>
+              <td class="p-3 text-gray-800">{{ article.isActive ? 'Oui' : 'Non' }}</td>
+              <td class="p-3 text-gray-800">{{ article.author }}</td>
               <td class="p-3 text-right">
                 <button
-                  (click)="openModal(user)"
+                  (click)="openModalArticle(article)"
                   class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition">
                   Afficher
                 </button>
@@ -79,20 +120,12 @@
           </table>
         </div>
       </div>
-      <div *ngIf="activeTab === 'gestion-contenu'" id="gestion-contenu">
-        <h2 class="text-2xl font-bold text-gray-800">Gestion du contenu</h2>
-        <p class="mt-4 text-gray-600">Section pour la gestion des contenus.</p>
-      </div>
-      <div *ngIf="activeTab === 'articles'" id="articles">
-        <h2 class="text-2xl font-bold text-gray-800">Articles</h2>
-        <p class="mt-4 text-gray-600">Section pour gérer vos articles.</p>
-      </div>
     </div>
   </div>
 </div>
 
-<div *ngIf="selectedUser" class="fixed inset-0 flex items-center justify-center">
-  <div class="bg-white border border-gray-300 w-1/2 p-6 rounded-lg shadow-lg relative">
+<div *ngIf="selectedUser" class="fixed inset-0 flex items-center justify-center h-[80vh] z-[1000] mt-10">
+  <div class="bg-white border border-gray-300 w-1/2 p-6 rounded-lg shadow-lg relative max-h-[80vh] overflow-y-auto">
     <!-- Bouton de fermeture -->
     <button
       (click)="closeModal()"
@@ -113,14 +146,14 @@
         [class.border-blue-600]="modalTab === 'informations'">
         Informations
       </button>
-      <button
-        (click)="setModalTab('informations-reserve')"
-        class="px-4 py-2 text-gray-600 font-medium transition"
-        [class.text-blue-600]="modalTab === 'informations-reserve'"
-        [class.border-b-2]="modalTab === 'informations-reserve'"
-        [class.border-blue-600]="modalTab === 'informations-reserve'">
-        Réservations
-      </button>
+<!--      <button-->
+<!--        (click)="setModalTab('informations-reserve')"-->
+<!--        class="px-4 py-2 text-gray-600 font-medium transition"-->
+<!--        [class.text-blue-600]="modalTab === 'informations-reserve'"-->
+<!--        [class.border-b-2]="modalTab === 'informations-reserve'"-->
+<!--        [class.border-blue-600]="modalTab === 'informations-reserve'">-->
+<!--        Réservations-->
+<!--      </button>-->
       <button
         (click)="setModalTab('equipement')"
         class="px-4 py-2 text-gray-600 font-medium transition"
@@ -129,36 +162,140 @@
         [class.border-blue-600]="modalTab === 'equipement'">
         Équipement
       </button>
-      <button
-        (click)="setModalTab('pointage')"
-        class="px-4 py-2 text-gray-600 font-medium transition"
-        [class.text-blue-600]="modalTab === 'pointage'"
-        [class.border-b-2]="modalTab === 'pointage'"
-        [class.border-blue-600]="modalTab === 'pointage'">
-        Pointage
-      </button>
+<!--      <button-->
+<!--        (click)="setModalTab('pointage')"-->
+<!--        class="px-4 py-2 text-gray-600 font-medium transition"-->
+<!--        [class.text-blue-600]="modalTab === 'pointage'"-->
+<!--        [class.border-b-2]="modalTab === 'pointage'"-->
+<!--        [class.border-blue-600]="modalTab === 'pointage'">-->
+<!--        Pointage-->
+<!--      </button>-->
     </div>
 
     <!-- Contenu de la modale -->
     <div class="mt-4">
       <div *ngIf="modalTab === 'informations'">
-        <p><strong>Nom :</strong> {{ selectedUser.name }}</p>
-        <p><strong>Email :</strong> {{ selectedUser.email }}</p>
-        <p><strong>Rôle :</strong> {{ selectedUser.role }}</p>
-      </div>
-      <div *ngIf="modalTab === 'informations-reserve'">
-        <p>Aucune réservation actuellement.</p>
+        <form [formGroup]="profilForm" class="grid grid-cols-2 gap-4">
+          <!-- Nom -->
+          <div>
+            <label class="block text-sm font-semibold text-gray-700">Nom</label>
+            <input type="text" formControlName="lastname" class="w-full p-2 border border-gray-300 rounded-lg focus:ring focus:ring-blue-200">
+          </div>
+
+          <!-- Prénom -->
+          <div>
+            <label class="block text-sm font-semibold text-gray-700">Prénom</label>
+            <input type="text" formControlName="firstname" class="w-full p-2 border border-gray-300 rounded-lg focus:ring focus:ring-blue-200">
+          </div>
+
+          <!-- Date de naissance -->
+          <div>
+            <label class="block text-sm font-semibold text-gray-700">Date de naissance</label>
+            <input type="date" formControlName="birthdate" class="w-full p-2 border border-gray-300 rounded-lg focus:ring focus:ring-blue-200">
+          </div>
+
+          <!-- Adresse -->
+          <div>
+            <label class="block text-sm font-semibold text-gray-700">Adresse</label>
+            <input type="text" formControlName="address" class="w-full p-2 border border-gray-300 rounded-lg focus:ring focus:ring-blue-200">
+          </div>
+
+          <!-- Ville -->
+          <div>
+            <label class="block text-sm font-semibold text-gray-700">Ville</label>
+            <input type="text" formControlName="city" class="w-full p-2 border border-gray-300 rounded-lg focus:ring focus:ring-blue-200">
+          </div>
+
+          <!-- Code postal -->
+          <div>
+            <label class="block text-sm font-semibold text-gray-700">Code Postal</label>
+            <input type="text" formControlName="postalCode" class="w-full p-2 border border-gray-300 rounded-lg focus:ring focus:ring-blue-200">
+          </div>
+
+          <!-- Pays -->
+          <div>
+            <label class="block text-sm font-semibold text-gray-700">Pays</label>
+            <input type="text" formControlName="country" class="w-full p-2 border border-gray-300 rounded-lg focus:ring focus:ring-blue-200">
+          </div>
+
+          <!-- NID -->
+          <div>
+            <label class="block text-sm font-semibold text-gray-700">NID</label>
+            <input type="text" formControlName="nid" class="w-full p-2 border border-gray-300 rounded-lg focus:ring focus:ring-blue-200">
+          </div>
+
+          <!-- Réserve -->
+          <div class="flex items-center space-x-2">
+            <input type="checkbox" formControlName="reserve" class="w-5 h-5 text-blue-600 border-gray-300 rounded">
+            <label class="text-sm font-semibold text-gray-700">Réserve</label>
+          </div>
+
+          <!-- Armée -->
+          <div>
+            <label class="block text-sm font-semibold text-gray-700">Armée</label>
+            <input type="text" formControlName="army" class="w-full p-2 border border-gray-300 rounded-lg focus:ring focus:ring-blue-200">
+          </div>
+
+          <!-- Grade -->
+          <div>
+            <label class="block text-sm font-semibold text-gray-700">Grade</label>
+            <input type="text" formControlName="grade" class="w-full p-2 border border-gray-300 rounded-lg focus:ring focus:ring-blue-200">
+          </div>
+
+          <!-- Cotisation -->
+          <div class="flex items-center space-x-2">
+            <input type="checkbox" formControlName="cotisation" class="w-5 h-5 text-blue-600 border-gray-300 rounded">
+            <label class="text-sm font-semibold text-gray-700">Cotisation</label>
+          </div>
+
+          <!-- Membre -->
+          <div class="flex items-center space-x-2">
+            <input type="checkbox" formControlName="member" class="w-5 h-5 text-blue-600 border-gray-300 rounded">
+            <label class="text-sm font-semibold text-gray-700">Membre</label>
+          </div>
+
+          <!-- Poste -->
+          <div>
+            <label class="block text-sm font-semibold text-gray-700">Poste</label>
+            <input type="text" formControlName="poste" class="w-full p-2 border border-gray-300 rounded-lg focus:ring focus:ring-blue-200">
+          </div>
+
+          <!-- Téléphone -->
+          <div>
+            <label class="block text-sm font-semibold text-gray-700">Téléphone</label>
+            <input type="text" formControlName="phonenumber" class="w-full p-2 border border-gray-300 rounded-lg focus:ring focus:ring-blue-200">
+          </div>
+
+          <!-- Email (pleine largeur) -->
+          <div class="col-span-2">
+            <label class="block text-sm font-semibold text-gray-700">Email</label>
+            <input type="email" formControlName="email" class="w-full p-2 border border-gray-300 rounded-lg focus:ring focus:ring-blue-200">
+          </div>
+        </form>
       </div>
       <div *ngIf="modalTab === 'equipement'">
-        <p>Liste des équipements affectés :</p>
-        <ul class="list-disc pl-5 text-gray-700">
-          <li>Ordinateur portable</li>
-          <li>Téléphone</li>
-          <li>Casque audio</li>
-        </ul>
-      </div>
-      <div *ngIf="modalTab === 'pointage'">
-        <p>Dernier pointage : 21/11/2024 à 09:15</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
+          <div *ngFor="let material of materials" class="border rounded-lg p-4 shadow-md">
+            <img [src]="material.image" alt="{{ material.name }}" class="w-full h-40 object-cover rounded">
+            <h2 class="text-lg font-semibold mt-2">{{ material.name }}</h2>
+
+            <!-- Champ de quantité -->
+            <div class="flex items-center mt-2">
+              <button (click)="decreaseQuantity(material)" class="p-2 bg-red-500 text-white rounded-l">-</button>
+              <span class="px-4">{{ material.quantity }}</span>
+              <button (click)="increaseQuantity(material)" class="p-2 bg-green-500 text-white rounded-r">+</button>
+            </div>
+
+            <!-- Afficher les champs de date uniquement si la quantité > 0 -->
+            <div *ngIf="material.quantity > 0" class="mt-4">
+              <label class="block text-sm font-medium">Date de perception</label>
+              <input type="date" [(ngModel)]="material.startDate" class="border p-2 rounded w-full">
+
+              <label class="block text-sm font-medium mt-2">Date de réintégration</label>
+              <input type="date" [(ngModel)]="material.endDate" class="border p-2 rounded w-full">
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -169,10 +306,11 @@
         class="px-4 py-2 bg-gray-500 text-white rounded hover:bg-gray-600 transition">
         Fermer
       </button>
+      <button type="button" (click)="updateUser()" class="mx-2 px-6 py-2 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition">
+        Enregistrer
+      </button>
     </div>
   </div>
 </div>
-
-
 
 <app-footer-view></app-footer-view>

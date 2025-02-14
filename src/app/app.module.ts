@@ -38,6 +38,8 @@ import { TcComponent } from './asor44/tc/tc.component';
 import { ConfidentialityComponent } from './asor44/confidentiality/confidentiality.component';
 import { AdminComponent } from './asor44/admin/admin.component';
 import { PartnersComponent } from './asor44/partners/partners.component';
+import {ToastrModule} from "ngx-toastr";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 
 /***
@@ -119,10 +121,12 @@ const routes: Routes = [
     PartnersComponent,
   ],
   imports: [
+    BrowserAnimationsModule,
     BrowserModule,
     RouterModule.forRoot(routes),
     FormsModule,
     ReactiveFormsModule,
+    ToastrModule.forRoot(),
   ],
   exports: [
     RouterModule,

@@ -8,6 +8,9 @@ export class ArticleService {
   baseUrl = environment.apiUrl + '/' + environment.apiPath + '/' + environment.apiVersion;
   constructor() { }
 
+  getAllArticles(){
+    return axios.get(`${this.baseUrl}/article`);
+  }
 
   // Create article
   createArticle(data: any){
