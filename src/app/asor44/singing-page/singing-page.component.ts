@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-singing-page',
-  templateUrl: './singing-page.component.html',
-  styleUrls: ['./singing-page.component.scss']
+    selector: 'app-singing-page',
+    templateUrl: './singing-page.component.html',
+    styleUrls: ['./singing-page.component.scss'],
+    standalone: false
 })
 export class SingingPageComponent {
   selectedChantType: string = 'default';
