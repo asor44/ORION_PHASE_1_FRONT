@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { MaterialService } from "../services/material.service";
 import { UserService } from "../services/user.service";
+import {Router} from "@angular/router";
 
 @Component({
     selector: 'app-profile',
@@ -13,7 +14,7 @@ export class ProfilComponent implements OnInit {
   profilForm: FormGroup | undefined;
   materials: any[] = []
 
-  constructor(private fb: FormBuilder, private materialService: MaterialService, private userService: UserService) { }
+  constructor(private router: Router, private fb: FormBuilder, private materialService: MaterialService, private userService: UserService) { }
 
   async ngOnInit(): Promise<void> {
     this.profilForm = this.fb.group({
@@ -43,6 +44,8 @@ export class ProfilComponent implements OnInit {
       console.log("Profile not found");
       this.profilForm.patchValue(requestProfile.data);
       console.log("Profile found", requestProfile.data);
+    }else{
+      this.router.navigate(['/login']);
     }
   }
 

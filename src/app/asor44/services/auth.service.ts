@@ -28,4 +28,8 @@ export class AuthService {
     console.log(credentials)
     return axios.post(`${this.baseUrl}/auth/login`, credentials);
   }
+
+  isConnected(){
+    return !!localStorage.getItem('token');
+  }
 }
