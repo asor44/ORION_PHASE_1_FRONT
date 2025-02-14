@@ -1,59 +1,40 @@
-name: Azure Static Web Apps CI/CD
+name: Deploy Orion Front to Azure Static Web Apps
 
 on:
   push:
     branches:
-      - DEV
+      - main  # Modifie cette branche si nécessaire
   pull_request:
-    types: [opened, synchronize, reopened, closed]
+    types: [opened, synchronize, reopened]
     branches:
-      - DEV
+      - main
 
 jobs:
-  build_and_deploy_job:
-    if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
+  build_and_deploy:
     runs-on: ubuntu-latest
-    name: Build and Deploy Job
+
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
-        with:
-          submodules: true
-          lfs: false
+        uses: actions/checkout@v4
 
-      # Afficher la structure des fichiers avant le build
-      - name: List initial project files
-        run: ls -R
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
 
       - name: Install dependencies
         run: npm install
+        working-directory: ./orion-front  # Ajuste selon la structure du projet
 
-      - name: Build Angular project
+      - name: Build the application
         run: npm run build
+        working-directory: ./orion-front  # Ajuste si nécessaire
 
-      # Vérification de la présence du fichier index.html après le build
-      - name: List build output files
-        run: ls -R dist/orion-front
-
-      - name: Build And Deploy
-        id: builddeploy
+      - name: Deploy to Azure Static Web Apps
         uses: Azure/static-web-apps-deploy@v1
         with:
-          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_ASHY_WAVE_088395403 }}
-          repo_token: ${{ secrets.GITHUB_TOKEN }} # Utilisé pour les commentaires sur les PRs
+          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
           action: "upload"
-          app_location: "/"  # Dossier source du projet
-          api_location: ""  # Pas d'API pour ce projet
-          output_location: "dist/orion-front"  # Dossier contenant index.html après build
-
-  close_pull_request_job:
-    if: github.event_name == 'pull_request' && github.event.action == 'closed'
-    runs-on: ubuntu-latest
-    name: Close Pull Request Job
-    steps:
-      - name: Close Pull Request
-        id: closepullrequest
-        uses: Azure/static-web-apps-deploy@v1
-        with:
-          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_ASHY_WAVE_088395403 }}
-          action: "close"
+          app_location: "dist/orion-front/browser"  # Ajuste si nécessaire
+          output_location: ""
